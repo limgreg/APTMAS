@@ -1,0 +1,741 @@
+{
+  "objective": "A2 — feature-recognition rule base (SHAP + LIME + expert)",
+  "model": "Progress Check (GradientBoostingClassifier)",
+  "feature_set": "g1",
+  "target": "pass_scholarship (evaluation-year total >= 60.0)",
+  "metrics": {
+    "n_train": 15105.0,
+    "n_test": 5035.0,
+    "base_rate": 0.7373882820258193,
+    "auc_test": 0.8664196776831454,
+    "auc_train": 0.8698366275770437,
+    "accuracy_test": 0.8214498510427011,
+    "brier_test": 0.12377676064049159,
+    "log_loss_test": 0.3874830178842649,
+    "majority_baseline": 0.7373882820258193
+  },
+  "methods": [
+    "shap",
+    "lime",
+    "expert"
+  ],
+  "expert_notes_supplied": false,
+  "non_actionable_features": [
+    "enrollment_year",
+    "is_male"
+  ],
+  "global_drivers": [
+    {
+      "feature": "enrollment_year",
+      "mean_abs_shap": 0.8281268522712921,
+      "mean_shap": 0.011168451639745563,
+      "direction": "higher_helps",
+      "direction_strength": 0.9733968873541156,
+      "rank": 1,
+      "actionable": false
+    },
+    {
+      "feature": "g1_total",
+      "mean_abs_shap": 0.7449542912043389,
+      "mean_shap": -0.019452251431215095,
+      "direction": "higher_helps",
+      "direction_strength": 0.9671467211144293,
+      "rank": 2,
+      "actionable": true
+    },
+    {
+      "feature": "g1_score_standing_long_jump",
+      "mean_abs_shap": 0.20237849114166692,
+      "mean_shap": -0.018442993237973403,
+      "direction": "higher_helps",
+      "direction_strength": 0.8723393956663295,
+      "rank": 3,
+      "actionable": true
+    },
+    {
+      "feature": "g1_score_endurance_run",
+      "mean_abs_shap": 0.19775562819172252,
+      "mean_shap": -0.013492927428562899,
+      "direction": "higher_helps",
+      "direction_strength": 0.6169987475222275,
+      "rank": 4,
+      "actionable": true
+    },
+    {
+      "feature": "g1_score_sit_and_reach",
+      "mean_abs_shap": 0.12105058271785907,
+      "mean_shap": -0.007198558186094506,
+      "direction": "higher_helps",
+      "direction_strength": 0.7909409129864028,
+      "rank": 5,
+      "actionable": true
+    },
+    {
+      "feature": "g1_score_strength",
+      "mean_abs_shap": 0.10668676875647279,
+      "mean_shap": 0.011726260942969052,
+      "direction": "higher_helps",
+      "direction_strength": 0.7542853494714356,
+      "rank": 6,
+      "actionable": true
+    },
+    {
+      "feature": "g1_score_sprint_50m",
+      "mean_abs_shap": 0.10451932538616802,
+      "mean_shap": -0.002308767900235643,
+      "direction": "higher_helps",
+      "direction_strength": 0.5298363548059923,
+      "rank": 7,
+      "actionable": true
+    },
+    {
+      "feature": "is_male",
+      "mean_abs_shap": 0.0859718380272405,
+      "mean_shap": -0.007088789978192595,
+      "direction": "higher_hurts",
+      "direction_strength": 0.9534725607226683,
+      "rank": 8,
+      "actionable": false
+    },
+    {
+      "feature": "g1_score_vital_capacity",
+      "mean_abs_shap": 0.06648863642738148,
+      "mean_shap": 0.0022939145083087694,
+      "direction": "higher_hurts",
+      "direction_strength": 0.7901177148032509,
+      "rank": 9,
+      "actionable": true
+    },
+    {
+      "feature": "g1_score_bmi",
+      "mean_abs_shap": 0.0398348897579155,
+      "mean_shap": -0.0025809336238458345,
+      "direction": "higher_helps",
+      "direction_strength": 0.8735023701062071,
+      "rank": 10,
+      "actionable": true
+    }
+  ],
+  "segment_entries": [
+    {
+      "segment": "broad_headroom",
+      "n": 493,
+      "drivers": [
+        {
+          "feature": "g1_total",
+          "rank": 1,
+          "direction": "higher_helps",
+          "effect_size": 1.38512,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "enrollment_year",
+          "rank": 2,
+          "direction": "higher_helps",
+          "effect_size": 0.81896,
+          "method": "shap",
+          "actionable": false,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_standing_long_jump",
+          "rank": 3,
+          "direction": "higher_helps",
+          "effect_size": 0.36355,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_endurance_run",
+          "rank": 4,
+          "direction": "higher_helps",
+          "effect_size": 0.21855,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_sit_and_reach",
+          "rank": 5,
+          "direction": "higher_helps",
+          "effect_size": 0.14705,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        }
+      ]
+    },
+    {
+      "segment": "endurance_run_headroom",
+      "n": 302,
+      "drivers": [
+        {
+          "feature": "enrollment_year",
+          "rank": 1,
+          "direction": "higher_helps",
+          "effect_size": 0.97029,
+          "method": "shap",
+          "actionable": false,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_total",
+          "rank": 2,
+          "direction": "higher_helps",
+          "effect_size": 0.80076,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_standing_long_jump",
+          "rank": 3,
+          "direction": "higher_helps",
+          "effect_size": 0.19632,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_endurance_run",
+          "rank": 4,
+          "direction": "higher_hurts",
+          "effect_size": 0.19606,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_strength",
+          "rank": 5,
+          "direction": "higher_helps",
+          "effect_size": 0.15585,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        }
+      ]
+    },
+    {
+      "segment": "strength_headroom",
+      "n": 1006,
+      "drivers": [
+        {
+          "feature": "enrollment_year",
+          "rank": 1,
+          "direction": "higher_helps",
+          "effect_size": 0.84356,
+          "method": "shap",
+          "actionable": false,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_total",
+          "rank": 2,
+          "direction": "higher_helps",
+          "effect_size": 0.60655,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_endurance_run",
+          "rank": 3,
+          "direction": "higher_helps",
+          "effect_size": 0.21149,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_standing_long_jump",
+          "rank": 4,
+          "direction": "higher_helps",
+          "effect_size": 0.16757,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_sit_and_reach",
+          "rank": 5,
+          "direction": "higher_helps",
+          "effect_size": 0.12508,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        }
+      ]
+    },
+    {
+      "segment": "vital_capacity_headroom",
+      "n": 2199,
+      "drivers": [
+        {
+          "feature": "enrollment_year",
+          "rank": 1,
+          "direction": "higher_helps",
+          "effect_size": 0.8036,
+          "method": "shap",
+          "actionable": false,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_total",
+          "rank": 2,
+          "direction": "higher_helps",
+          "effect_size": 0.65709,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_endurance_run",
+          "rank": 3,
+          "direction": "higher_helps",
+          "effect_size": 0.18704,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_standing_long_jump",
+          "rank": 4,
+          "direction": "higher_helps",
+          "effect_size": 0.183,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        },
+        {
+          "feature": "g1_score_sit_and_reach",
+          "rank": 5,
+          "direction": "higher_helps",
+          "effect_size": 0.1119,
+          "method": "shap",
+          "actionable": true,
+          "expert_note": "PLACEHOLDER — awaiting mentor expert rules (data/expert_rules/)",
+          "expert_note_is_placeholder": true
+        }
+      ]
+    }
+  ],
+  "local_explanations_lime": [
+    {
+      "subject": "local_01",
+      "pass_probability": 0.0415,
+      "local_drivers": [
+        {
+          "condition": "g1_total <= 63.20",
+          "weight": -0.264,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "enrollment_year <= 2020.00",
+          "weight": -0.2178,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_endurance_run <= 50.00",
+          "weight": -0.0957,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_sit_and_reach <= 68.00",
+          "weight": -0.0746,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_standing_long_jump <= 50.00",
+          "weight": -0.07,
+          "direction": "higher_hurts"
+        }
+      ]
+    },
+    {
+      "subject": "local_02",
+      "pass_probability": 0.2874,
+      "local_drivers": [
+        {
+          "condition": "g1_total <= 63.20",
+          "weight": -0.2535,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "enrollment_year <= 2020.00",
+          "weight": -0.2176,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_endurance_run <= 50.00",
+          "weight": -0.0951,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "74.00 < g1_score_sit_and_reach <= 85.00",
+          "weight": 0.037,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_strength <= 10.00",
+          "weight": -0.0359,
+          "direction": "higher_hurts"
+        }
+      ]
+    },
+    {
+      "subject": "local_03",
+      "pass_probability": 0.4654,
+      "local_drivers": [
+        {
+          "condition": "g1_total <= 63.20",
+          "weight": -0.257,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "2021.00 < enrollment_year <= 2022.00",
+          "weight": 0.1326,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_standing_long_jump <= 50.00",
+          "weight": -0.0578,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "74.00 < g1_score_sit_and_reach <= 85.00",
+          "weight": 0.0401,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "68.00 < g1_score_endurance_run <= 74.00",
+          "weight": 0.0327,
+          "direction": "higher_helps"
+        }
+      ]
+    },
+    {
+      "subject": "local_04",
+      "pass_probability": 0.6016,
+      "local_drivers": [
+        {
+          "condition": "g1_total <= 63.20",
+          "weight": -0.2546,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "enrollment_year <= 2020.00",
+          "weight": -0.2077,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_endurance_run > 74.00",
+          "weight": 0.1194,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "50.00 < g1_score_standing_long_jump <= 64.00",
+          "weight": -0.028,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_strength <= 10.00",
+          "weight": -0.0271,
+          "direction": "higher_hurts"
+        }
+      ]
+    },
+    {
+      "subject": "local_05",
+      "pass_probability": 0.7272,
+      "local_drivers": [
+        {
+          "condition": "2020.00 < enrollment_year <= 2021.00",
+          "weight": -0.1057,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_endurance_run <= 50.00",
+          "weight": -0.0914,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_standing_long_jump > 72.00",
+          "weight": 0.087,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "74.00 < g1_score_sit_and_reach <= 85.00",
+          "weight": 0.0325,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "is_male <= 0.00",
+          "weight": 0.0271,
+          "direction": "higher_helps"
+        }
+      ]
+    },
+    {
+      "subject": "local_06",
+      "pass_probability": 0.8162,
+      "local_drivers": [
+        {
+          "condition": "g1_total <= 63.20",
+          "weight": -0.2533,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "2021.00 < enrollment_year <= 2022.00",
+          "weight": 0.1319,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_endurance_run <= 50.00",
+          "weight": -0.0839,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_sit_and_reach <= 68.00",
+          "weight": -0.067,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_strength > 68.00",
+          "weight": 0.0442,
+          "direction": "higher_helps"
+        }
+      ]
+    },
+    {
+      "subject": "local_07",
+      "pass_probability": 0.8715,
+      "local_drivers": [
+        {
+          "condition": "2021.00 < enrollment_year <= 2022.00",
+          "weight": 0.146,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_endurance_run <= 50.00",
+          "weight": -0.0969,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_strength > 68.00",
+          "weight": 0.0502,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_sprint_50m <= 66.00",
+          "weight": -0.0357,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "63.20 < g1_total <= 69.50",
+          "weight": 0.0308,
+          "direction": "higher_helps"
+        }
+      ]
+    },
+    {
+      "subject": "local_08",
+      "pass_probability": 0.9139,
+      "local_drivers": [
+        {
+          "condition": "enrollment_year > 2022.00",
+          "weight": 0.2297,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_sit_and_reach <= 68.00",
+          "weight": -0.0695,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_standing_long_jump <= 50.00",
+          "weight": -0.0654,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "g1_score_sprint_50m <= 66.00",
+          "weight": -0.0284,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "50.00 < g1_score_endurance_run <= 68.00",
+          "weight": -0.0233,
+          "direction": "higher_hurts"
+        }
+      ]
+    },
+    {
+      "subject": "local_09",
+      "pass_probability": 0.9423,
+      "local_drivers": [
+        {
+          "condition": "g1_score_endurance_run > 74.00",
+          "weight": 0.11,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_total > 75.10",
+          "weight": 0.1094,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "2020.00 < enrollment_year <= 2021.00",
+          "weight": -0.1082,
+          "direction": "higher_hurts"
+        },
+        {
+          "condition": "74.00 < g1_score_sit_and_reach <= 85.00",
+          "weight": 0.0493,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "64.00 < g1_score_standing_long_jump <= 72.00",
+          "weight": 0.0289,
+          "direction": "higher_helps"
+        }
+      ]
+    },
+    {
+      "subject": "local_10",
+      "pass_probability": 0.9598,
+      "local_drivers": [
+        {
+          "condition": "enrollment_year > 2022.00",
+          "weight": 0.2156,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "69.50 < g1_total <= 75.10",
+          "weight": 0.1296,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "68.00 < g1_score_endurance_run <= 74.00",
+          "weight": 0.0433,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "74.00 < g1_score_sit_and_reach <= 85.00",
+          "weight": 0.0376,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_sprint_50m <= 66.00",
+          "weight": -0.022,
+          "direction": "higher_hurts"
+        }
+      ]
+    },
+    {
+      "subject": "local_11",
+      "pass_probability": 0.9738,
+      "local_drivers": [
+        {
+          "condition": "2021.00 < enrollment_year <= 2022.00",
+          "weight": 0.1296,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_endurance_run > 74.00",
+          "weight": 0.1192,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_total > 75.10",
+          "weight": 0.0969,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_standing_long_jump > 72.00",
+          "weight": 0.0907,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_sit_and_reach <= 68.00",
+          "weight": -0.0747,
+          "direction": "higher_hurts"
+        }
+      ]
+    },
+    {
+      "subject": "local_12",
+      "pass_probability": 0.99,
+      "local_drivers": [
+        {
+          "condition": "enrollment_year > 2022.00",
+          "weight": 0.2242,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_endurance_run > 74.00",
+          "weight": 0.1117,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_total > 75.10",
+          "weight": 0.1072,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_standing_long_jump > 72.00",
+          "weight": 0.076,
+          "direction": "higher_helps"
+        },
+        {
+          "condition": "g1_score_strength > 68.00",
+          "weight": 0.0461,
+          "direction": "higher_helps"
+        }
+      ]
+    }
+  ],
+  "shap_lime_disagreements": [
+    {
+      "feature": "g1_score_sprint_50m",
+      "shap_direction": "higher_helps",
+      "lime_majority_direction": "higher_hurts",
+      "n_lime_observations": 3
+    },
+    {
+      "feature": "is_male",
+      "shap_direction": "higher_hurts",
+      "lime_majority_direction": "higher_helps",
+      "n_lime_observations": 1
+    }
+  ],
+  "caveats": [
+    "Attributions explain the MODEL, not the human body. They are not causal.",
+    "A three-year-ahead projection is fuzzy; drivers describe tendency, not destiny.",
+    "Expert notes marked PLACEHOLDER are unfilled slots, not findings.",
+    "Framing derived from this file must stay directional and non-evaluative.",
+    "Drivers with actionable=false (enrollment_year, is_male) are model controls. They must never become advice, and a student cannot change them.",
+    "enrollment_year is the largest single driver, so part of this model's skill is cohort effects rather than fitness. Treat cross-cohort comparisons with care."
+  ]
+}

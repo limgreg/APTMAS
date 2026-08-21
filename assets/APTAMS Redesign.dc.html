@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#080908; color:#F2F4EF; font-family:'Barlow',ui-sans-serif,system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#C8FF3D; text-decoration:none; }
+  a:hover { color:#dcff7d; }
+  @keyframes rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+  @keyframes fade { from { opacity:0; } to { opacity:1; } }
+  @keyframes ringDraw { from { stroke-dashoffset:754; } }
+  @keyframes pathDraw { from { stroke-dashoffset:900; } }
+  @keyframes barFill { from { width:0; } }
+  @keyframes popIn { from { opacity:0; transform:scale(.9); } to { opacity:1; transform:none; } }
+  @keyframes drift { 0% { transform:translate3d(0,0,0) scale(1); } 50% { transform:translate3d(3%,-4%,0) scale(1.12); } 100% { transform:translate3d(0,0,0) scale(1); } }
+  @keyframes blink { 0%,49% { opacity:1; } 50%,100% { opacity:0; } }
+  @keyframes pulseDot { 0%,100% { opacity:.35; transform:scale(1);} 50% { opacity:1; transform:scale(1.35);} }
+  @keyframes sweep { from { transform:translateX(-100%); } to { transform:translateX(220%); } }
+  @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; } }
+</style>
+</helmet>
+
+<section style="padding:48px 32px 96px; display:flex; flex-direction:column; gap:24px;">
+
+  <div id="1a" style="display:flex; flex-direction:column; gap:20px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; padding:4px 9px; border-radius:999px; background:#C8FF3D; color:#0A0B0A; font-weight:500;">1a</span>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;">APTAMS — coach-first, performance-tech</span>
+      <span style="font-size:13px; color:#8C918A;">Desktop app + mobile. Click the nav, click a prompt.</span>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:32px;">
+
+      <!-- ================= DESKTOP APP ================= -->
+      <div style="position:relative; flex:none; width:1240px; height:840px; border-radius:22px; overflow:hidden; background:#0B0C0B; border:1px solid #23261F; box-shadow:0 40px 120px -40px rgba(0,0,0,.9);">
+
+        <!-- ambient -->
+        <div aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+          <div style="position:absolute; top:-22%; left:-8%; width:62%; height:78%; border-radius:50%; background:radial-gradient(circle, rgba(200,255,61,.10), transparent 62%); filter:blur(30px); animation:drift 22s ease-in-out infinite;"></div>
+          <div style="position:absolute; bottom:-30%; right:-10%; width:58%; height:74%; border-radius:50%; background:radial-gradient(circle, rgba(120,180,255,.07), transparent 62%); filter:blur(34px); animation:drift 28s ease-in-out infinite reverse;"></div>
+        </div>
+
+        <!-- top bar -->
+        <div style="position:relative; display:flex; align-items:center; justify-content:space-between; padding:20px 28px; border-bottom:1px solid #1B1E18;">
+          <div style="display:flex; align-items:center; gap:14px; animation:rise .6s ease-out both;">
+            <div style="height:34px; width:34px; border-radius:10px; background:#C8FF3D; color:#0A0B0A; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-weight:800; font-size:17px;">A</div>
+            <div>
+              <p style="margin:0; font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; letter-spacing:.12em;">APTAMS</p>
+              <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.1em; color:#6F756C; text-transform:uppercase;">verified fitness intelligence</p>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; animation:rise .6s .06s ease-out both;">
+            <div style="display:flex; align-items:center; gap:8px; padding:7px 12px; border-radius:999px; border:1px solid #262A22; background:#101210;">
+              <span style="height:6px; width:6px; border-radius:50%; background:#FF7A45; animation:pulseDot 2.4s ease-in-out infinite;"></span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#B9BFB4;">needs support</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:9px; padding:6px 12px 6px 6px; border-radius:999px; border:1px solid #262A22; background:#101210;">
+              <span style="height:24px; width:24px; border-radius:50%; background:linear-gradient(140deg,#C8FF3D,#6E8F1F); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#0A0B0A;">90</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#B9BFB4;">90001 · Y4</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======= COACH VIEW ======= -->
+        <sc-if value="{{ isCoach }}" hint-placeholder-val="{{ true }}">
+          <div style="position:relative; height:714px; display:flex; flex-direction:column;">
+            <div style="flex:1; overflow:hidden; display:flex; justify-content:center;">
+              <div style="width:820px; padding:28px 0 0; display:flex; flex-direction:column; gap:18px;">
+
+                <sc-if value="{{ chatEmpty }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex; flex-direction:column; gap:26px; padding-top:42px;">
+                    <div style="animation:rise .7s .1s ease-out both;">
+                      <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#C8FF3D;">Coach</p>
+                      <h2 style="margin:10px 0 0; font-family:'Archivo',sans-serif; font-size:52px; line-height:1.02; font-weight:700; letter-spacing:-.02em; max-width:20ch;">Ask about your body, not your grade.</h2>
+                      <p style="margin:14px 0 0; font-size:16px; line-height:1.6; color:#8C918A; max-width:56ch;">Every answer is built from your four sittings and cites the record it came from. Nothing without a source gets shown.</p>
+                    </div>
+
+                    <div style="display:flex; flex-wrap:wrap; gap:10px; max-width:760px;">
+                      <sc-for list="{{ prompts }}" as="p" hint-placeholder-count="7">
+                        <button type="button" onClick="{{ p.send }}" style="cursor:pointer; padding:11px 16px; border-radius:999px; border:1px solid #2A2E25; background:#101210; color:#D6DBD1; font-family:'Barlow',sans-serif; font-size:14px; white-space:nowrap; transition:all .22s ease; animation:rise .6s ease-out both; animation-delay:{{ p.delay }};" style-hover="border-color:#C8FF3D; color:#0A0B0A; background:#C8FF3D; transform:translateY(-2px);">{{ p.text }}</button>
+                      </sc-for>
+                    </div>
+
+                    <div style="display:flex; gap:14px; padding-top:8px; animation:rise .7s .5s ease-out both;">
+                      <sc-for list="{{ glance }}" as="g" hint-placeholder-count="3">
+                        <div style="flex:1; padding:16px 18px; border-radius:14px; border:1px solid #1E211B; background:linear-gradient(180deg,#101210,#0C0E0C);">
+                          <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#6F756C;">{{ g.label }}</p>
+                          <p style="margin:8px 0 0; font-family:'Archivo',sans-serif; font-size:30px; font-weight:700; letter-spacing:-.02em; color:{{ g.color }};">{{ g.value }}</p>
+                          <p style="margin:4px 0 0; font-size:13px; color:#8C918A;">{{ g.note }}</p>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ chatStarted }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex; flex-direction:column; gap:20px; max-height:560px; overflow-y:auto; padding-right:6px;">
+                    <sc-for list="{{ messages }}" as="m" hint-placeholder-count="2">
+                      <div style="display:flex; justify-content:{{ m.align }};">
+                        <div style="max-width:86%; display:flex; flex-direction:column; gap:12px; animation:rise .5s ease-out both;">
+                          <sc-if value="{{ m.isUser }}" hint-placeholder-val="{{ false }}">
+                            <div style="padding:12px 18px; border-radius:18px 18px 4px 18px; background:#C8FF3D; color:#0A0B0A; font-size:15px; font-weight:500;">{{ m.text }}</div>
+                          </sc-if>
+                          <sc-if value="{{ m.isBot }}" hint-placeholder-val="{{ true }}">
+                            <div style="display:flex; gap:14px;">
+                              <div style="flex-shrink:0; height:28px; width:28px; border-radius:9px; background:#1A1D18; border:1px solid #2A2E25; display:flex; align-items:center; justify-content:center; font-size:12px; color:#C8FF3D;">◆</div>
+                              <div style="display:flex; flex-direction:column; gap:12px;">
+                                <p style="margin:0; font-size:16px; line-height:1.65; color:#E6EAE1;">{{ m.text }}<span style="display:{{ m.caret }}; margin-left:2px; color:#C8FF3D; animation:blink 1s step-end infinite;">▍</span></p>
+                                <sc-if value="{{ m.hasSources }}" hint-placeholder-val="{{ false }}">
+                                  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                                    <sc-for list="{{ m.sources }}" as="s" hint-placeholder-count="2">
+                                      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; padding:3px 8px; border-radius:6px; border:1px solid #2A2E25; background:#0E100E; color:#8C918A;">{{ s.mark }} {{ s.id }}</span>
+                                    </sc-for>
+                                  </div>
+                                </sc-if>
+                                <sc-if value="{{ m.hasCard }}" hint-placeholder-val="{{ false }}">
+                                  <div style="width:560px; border-radius:16px; border:1px solid #23261F; background:linear-gradient(180deg,#111311,#0C0E0C); overflow:hidden; animation:popIn .5s .1s ease-out both;">
+                                    <div style="padding:16px 20px; border-bottom:1px solid #1B1E18; display:flex; align-items:center; justify-content:space-between;">
+                                      <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#C8FF3D;">{{ m.card.label }}</p>
+                                      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#6F756C;">{{ m.card.prov }}</span>
+                                    </div>
+                                    <div style="padding:20px;">
+                                      <div style="display:flex; align-items:baseline; gap:10px;">
+                                        <span style="font-family:'Archivo',sans-serif; font-size:44px; font-weight:700; letter-spacing:-.03em; color:#F2F4EF;">{{ m.card.metric }}</span>
+                                        <span style="font-family:'Barlow Condensed',sans-serif; font-size:16px; letter-spacing:.08em; text-transform:uppercase; color:#8C918A;">{{ m.card.unit }}</span>
+                                      </div>
+                                      <p style="margin:6px 0 16px; font-size:14px; color:#8C918A;">{{ m.card.note }}</p>
+                                      <div style="display:flex; flex-direction:column; gap:10px;">
+                                        <sc-for list="{{ m.card.rows }}" as="r" hint-placeholder-count="3">
+                                          <div style="display:flex; align-items:center; gap:12px;">
+                                            <span style="width:150px; flex-shrink:0; font-size:13px; color:#B9BFB4;">{{ r.label }}</span>
+                                            <div style="flex:1; height:6px; border-radius:999px; background:#1B1E18; overflow:hidden;">
+                                              <div style="height:100%; border-radius:999px; background:{{ r.color }}; width:{{ r.pct }}; animation:barFill .9s cubic-bezier(.2,.8,.2,1) both; animation-delay:{{ r.delay }};"></div>
+                                            </div>
+                                            <span style="width:74px; text-align:right; font-family:'JetBrains Mono',monospace; font-size:12px; color:#F2F4EF;">{{ r.value }}</span>
+                                          </div>
+                                        </sc-for>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </sc-if>
+                              </div>
+                            </div>
+                          </sc-if>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+
+            <!-- composer -->
+            <div style="display:flex; justify-content:center; padding:0 0 26px;">
+              <div style="width:820px; display:flex; align-items:center; gap:12px; padding:12px 14px 12px 20px; border-radius:18px; border:1px solid #2A2E25; background:rgba(16,18,16,.9); backdrop-filter:blur(8px); animation:rise .7s .2s ease-out both;">
+                <input value="{{ draft }}" onChange="{{ onDraft }}" onKeyDown="{{ onKey }}" placeholder="Ask your coach…" style="flex:1; background:transparent; border:0; outline:none; color:#F2F4EF; font-family:'Barlow',sans-serif; font-size:16px;">
+                <button type="button" onClick="{{ toggleMic }}" style="cursor:pointer; height:38px; width:38px; border-radius:12px; border:1px solid #2A2E25; background:{{ micBg }}; color:{{ micColor }}; display:flex; align-items:center; justify-content:center; transition:all .2s ease;" style-hover="border-color:#C8FF3D;">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v1a7 7 0 0 1-14 0v-1"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                </button>
+                <button type="button" onClick="{{ sendDraft }}" style="cursor:pointer; height:38px; padding:0 20px; border-radius:12px; border:0; background:#C8FF3D; color:#0A0B0A; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; transition:all .2s ease;" style-hover="background:#dcff7d; transform:translateY(-1px);">Send</button>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ======= ASSESSMENT VIEW ======= -->
+        <sc-if value="{{ isAssess }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative; height:714px; overflow-y:auto; padding:30px 40px 110px;">
+            <div style="display:flex; gap:34px; align-items:flex-start;">
+              <div style="flex-shrink:0; display:flex; flex-direction:column; gap:18px; animation:rise .7s ease-out both;">
+                <div style="position:relative; width:300px; height:300px;">
+                  {{ ringSvg }}
+                  <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;">
+                    <span style="font-family:'Archivo',sans-serif; font-size:88px; font-weight:800; letter-spacing:-.05em; line-height:1; color:#F2F4EF;">{{ scoreShown }}</span>
+                    <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; color:#6F756C;">/ 100 · Y4</span>
+                    <span style="margin-top:8px; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:4px 12px; border-radius:999px; background:rgba(255,122,69,.14); color:#FF9E75;">below pass</span>
+                  </div>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:10px; width:300px;">
+                  <sc-for list="{{ gates }}" as="g" hint-placeholder-count="3">
+                    <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 15px; border-radius:12px; border:1px solid #1E211B; background:#0E100E;">
+                      <span style="font-family:'Barlow Condensed',sans-serif; font-size:14px; letter-spacing:.1em; text-transform:uppercase; color:#8C918A;">{{ g.label }}</span>
+                      <span style="font-family:'Archivo',sans-serif; font-size:17px; font-weight:700; color:{{ g.color }};">{{ g.gap }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="flex:1; display:flex; flex-direction:column; gap:22px; min-width:0;">
+                <div style="animation:rise .7s .08s ease-out both;">
+                  <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:14px;">
+                    <h3 style="margin:0; font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">Seven items</h3>
+                    <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#6F756C;">✓ verified · GB/T 2014 standard</span>
+                  </div>
+                  <div style="display:flex; flex-direction:column;">
+                    <sc-for list="{{ items }}" as="it" hint-placeholder-count="7">
+                      <div style="display:flex; align-items:center; gap:16px; padding:13px 0; border-top:1px solid #171A15; transition:background .2s ease;" style-hover="background:rgba(200,255,61,.03);">
+                        <span style="width:26px; font-family:'JetBrains Mono',monospace; font-size:11px; color:#4E5449;">{{ it.n }}</span>
+                        <span style="width:170px; flex-shrink:0; font-size:15px; color:#E6EAE1;">{{ it.label }}</span>
+                        <span style="width:96px; flex-shrink:0; font-family:'JetBrains Mono',monospace; font-size:12px; color:#8C918A;">{{ it.raw }}</span>
+                        <div style="flex:1; height:8px; border-radius:999px; background:#16190f14; background-color:#15180F; overflow:hidden; min-width:60px;">
+                          <div style="height:100%; border-radius:999px; background:{{ it.color }}; width:{{ it.pct }}; animation:barFill 1s cubic-bezier(.2,.8,.2,1) both; animation-delay:{{ it.delay }};"></div>
+                        </div>
+                        <span style="width:64px; text-align:right; font-family:'Archivo',sans-serif; font-size:19px; font-weight:700; color:{{ it.color }};">{{ it.points }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+
+                <div style="display:flex; gap:22px; align-items:stretch;">
+                  <div style="flex:1; padding:20px; border-radius:16px; border:1px solid #1E211B; background:linear-gradient(180deg,#101210,#0B0D0B); animation:rise .7s .16s ease-out both;">
+                    <p style="margin:0 0 6px; font-family:'Barlow Condensed',sans-serif; font-size:17px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">Profile</p>
+                    {{ radarSvg }}
+                  </div>
+                  <div style="flex:1; padding:20px; border-radius:16px; border:1px solid #1E211B; background:linear-gradient(180deg,#101210,#0B0D0B); animation:rise .7s .24s ease-out both; display:flex; flex-direction:column;">
+                    <div style="display:flex; align-items:baseline; justify-content:space-between;">
+                      <p style="margin:0; font-family:'Barlow Condensed',sans-serif; font-size:17px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">Four years</p>
+                      <span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FF9E75;">−0.25 pts/yr</span>
+                    </div>
+                    {{ trendSvg }}
+                    <p style="margin:6px 0 0; font-size:12px; line-height:1.5; color:#6F756C;">Crossed the pass line twice — the direction is less settled than the label suggests.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ======= PLAN VIEW ======= -->
+        <sc-if value="{{ isPlan }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative; height:714px; overflow-y:auto; padding:34px 40px 110px;">
+            <div style="display:flex; align-items:flex-end; justify-content:space-between; animation:rise .6s ease-out both;">
+              <div>
+                <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#C8FF3D;">Staged plan</p>
+                <h2 style="margin:8px 0 0; font-family:'Archivo',sans-serif; font-size:40px; font-weight:700; letter-spacing:-.02em;">52 → 80, in three stages</h2>
+              </div>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6F756C; max-width:34ch; text-align:right; line-height:1.6;">Scoring-table arithmetic. Not a training promise.</span>
+            </div>
+
+            <div style="margin-top:30px; display:flex; align-items:center; gap:0; animation:rise .6s .08s ease-out both;">
+              <sc-for list="{{ ladder }}" as="l" hint-placeholder-count="4">
+                <div style="display:flex; align-items:center;">
+                  <div style="display:flex; flex-direction:column; align-items:center; gap:8px; width:104px;">
+                    <span style="font-family:'Archivo',sans-serif; font-size:28px; font-weight:700; color:{{ l.color }};">{{ l.score }}</span>
+                    <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#6F756C;">{{ l.tag }}</span>
+                  </div>
+                  <sc-if value="{{ l.hasArrow }}" hint-placeholder-val="{{ true }}">
+                    <div style="width:88px; height:2px; background:linear-gradient(90deg,{{ l.color }},#2A2E25); position:relative; overflow:hidden;">
+                      <div style="position:absolute; inset:0; width:40%; background:linear-gradient(90deg,transparent,rgba(200,255,61,.9),transparent); animation:sweep 2.6s linear infinite; animation-delay:{{ l.delay }};"></div>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="margin-top:34px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+              <sc-for list="{{ stagePlans }}" as="s" hint-placeholder-count="3">
+                <div style="border-radius:18px; border:1px solid {{ s.border }}; background:{{ s.bg }}; padding:22px; display:flex; flex-direction:column; gap:14px; animation:rise .6s ease-out both; animation-delay:{{ s.delay }}; transition:transform .25s ease, border-color .25s ease;" style-hover="transform:translateY(-4px); border-color:#C8FF3D;">
+                  <div style="display:flex; align-items:center; justify-content:space-between;">
+                    <span style="font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:{{ s.tagColor }};">{{ s.tag }}</span>
+                    <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#6F756C;">{{ s.state }}</span>
+                  </div>
+                  <p style="margin:0; font-family:'Archivo',sans-serif; font-size:26px; font-weight:700; letter-spacing:-.02em;">{{ s.title }}</p>
+                  <p style="margin:0; font-size:14px; line-height:1.6; color:#8C918A;">{{ s.body }}</p>
+                  <div style="display:flex; flex-direction:column; gap:9px; margin-top:2px;">
+                    <sc-for list="{{ s.moves }}" as="mv" hint-placeholder-count="2">
+                      <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-radius:10px; background:rgba(255,255,255,.03);">
+                        <span style="font-size:13px; color:#D6DBD1;">{{ mv.label }}</span>
+                        <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#C8FF3D;">{{ mv.delta }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="margin-top:22px; display:flex; gap:18px; align-items:center; padding:20px 24px; border-radius:16px; border:1px dashed #2A2E25; animation:rise .6s .4s ease-out both;">
+              <span style="font-family:'Archivo',sans-serif; font-size:15px; font-weight:600;">Trained the block? Re-enter your numbers and the engine re-scores you.</span>
+              <button type="button" style="cursor:pointer; margin-left:auto; padding:11px 22px; border-radius:12px; border:0; background:#C8FF3D; color:#0A0B0A; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; transition:transform .2s ease;" style-hover="transform:translateY(-2px);">Self-assess</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ======= COHORT VIEW ======= -->
+        <sc-if value="{{ isCohort }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative; height:714px; overflow-y:auto; padding:34px 40px 110px;">
+            <div style="display:flex; align-items:flex-end; justify-content:space-between; animation:rise .6s ease-out both;">
+              <div>
+                <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#C8FF3D;">Teacher · cohort 2021</p>
+                <h2 style="margin:8px 0 0; font-family:'Archivo',sans-serif; font-size:40px; font-weight:700; letter-spacing:-.02em;">240 students, 41% needing support</h2>
+              </div>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6F756C; text-align:right; line-height:1.6;">GBM + isotonic calibration<br>acc 73.3 · auc 79.3 · brier .178</span>
+            </div>
+
+            <div style="margin-top:28px; display:grid; grid-template-columns:1.15fr 1fr; gap:20px;">
+              <div style="padding:24px; border-radius:18px; border:1px solid #1E211B; background:linear-gradient(180deg,#101210,#0B0D0B); animation:rise .6s .06s ease-out both;">
+                <p style="margin:0 0 18px; font-family:'Barlow Condensed',sans-serif; font-size:17px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">Band distribution</p>
+                <div style="display:flex; align-items:flex-end; gap:14px; height:190px;">
+                  <sc-for list="{{ bandBars }}" as="b" hint-placeholder-count="4">
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:10px; height:100%; justify-content:flex-end;">
+                      <span style="font-family:'Archivo',sans-serif; font-size:20px; font-weight:700; color:{{ b.color }};">{{ b.n }}</span>
+                      <div style="width:100%; border-radius:8px 8px 0 0; background:{{ b.color }}; height:{{ b.h }}; animation:barFill 0s; transform-origin:bottom; animation:rise .8s ease-out both; animation-delay:{{ b.delay }};"></div>
+                      <span style="font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#8C918A;">{{ b.label }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="padding:24px; border-radius:18px; border:1px solid #1E211B; background:linear-gradient(180deg,#101210,#0B0D0B); animation:rise .6s .12s ease-out both;">
+                <p style="margin:0 0 16px; font-family:'Barlow Condensed',sans-serif; font-size:17px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;">What drives passing · SHAP</p>
+                <div style="display:flex; flex-direction:column; gap:12px;">
+                  <sc-for list="{{ shap }}" as="s" hint-placeholder-count="6">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                      <span style="width:132px; flex-shrink:0; font-size:13px; color:#B9BFB4;">{{ s.label }}</span>
+                      <div style="flex:1; height:7px; border-radius:999px; background:#15180F; overflow:hidden;">
+                        <div style="height:100%; border-radius:999px; background:{{ s.color }}; width:{{ s.pct }}; animation:barFill 1s cubic-bezier(.2,.8,.2,1) both; animation-delay:{{ s.delay }};"></div>
+                      </div>
+                      <span style="width:44px; text-align:right; font-family:'JetBrains Mono',monospace; font-size:12px; color:#F2F4EF;">{{ s.val }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:20px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+              <sc-for list="{{ clusters }}" as="c" hint-placeholder-count="4">
+                <div style="padding:20px; border-radius:16px; border:1px solid #1E211B; background:#0E100E; display:flex; flex-direction:column; gap:10px; animation:rise .6s ease-out both; animation-delay:{{ c.delay }}; transition:border-color .25s ease, transform .25s ease;" style-hover="border-color:#C8FF3D; transform:translateY(-3px);">
+                  <span style="font-family:'Archivo',sans-serif; font-size:30px; font-weight:700; color:#C8FF3D;">{{ c.n }}</span>
+                  <span style="font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#E6EAE1; line-height:1.25;">{{ c.label }}</span>
+                  <span style="font-size:13px; line-height:1.5; color:#8C918A;">{{ c.note }}</span>
+                  <div style="margin-top:auto; height:5px; border-radius:999px; background:#15180F; overflow:hidden;">
+                    <div style="height:100%; border-radius:999px; background:#C8FF3D; width:{{ c.pct }}; animation:barFill 1s cubic-bezier(.2,.8,.2,1) both; animation-delay:{{ c.delay }};"></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- floating pill nav -->
+        <div style="position:absolute; bottom:24px; left:50%; transform:translateX(-50%); z-index:20; display:flex; gap:4px; padding:6px; border-radius:999px; border:1px solid #2A2E25; background:rgba(12,14,12,.86); backdrop-filter:blur(14px); box-shadow:0 18px 50px -18px rgba(0,0,0,.9); animation:rise .8s .3s ease-out both;">
+          <sc-for list="{{ nav }}" as="n" hint-placeholder-count="4">
+            <button type="button" onClick="{{ n.go }}" style="cursor:pointer; display:flex; align-items:center; gap:9px; padding:10px 20px; border-radius:999px; border:0; background:{{ n.bg }}; color:{{ n.color }}; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; transition:all .25s cubic-bezier(.2,.8,.2,1);" style-hover="color:#C8FF3D;">
+              <span style="height:6px; width:6px; border-radius:50%; background:{{ n.dot }};"></span>{{ n.label }}
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- ================= MOBILE ================= -->
+      <div style="display:flex; flex:none; flex-direction:column; gap:14px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#6F756C;">mobile · coach home</span>
+        <div style="position:relative; flex:none; width:390px; height:840px; border-radius:44px; overflow:hidden; background:#0B0C0B; border:1px solid #23261F; box-shadow:0 40px 120px -40px rgba(0,0,0,.9);">
+          <div aria-hidden="true" style="position:absolute; top:-12%; left:-20%; width:100%; height:46%; border-radius:50%; background:radial-gradient(circle, rgba(200,255,61,.12), transparent 62%); filter:blur(26px); animation:drift 20s ease-in-out infinite;"></div>
+
+          <div style="position:relative; padding:52px 22px 0; display:flex; align-items:center; justify-content:space-between;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div style="height:30px; width:30px; border-radius:9px; background:#C8FF3D; color:#0A0B0A; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-weight:800; font-size:15px;">A</div>
+              <span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:14px; letter-spacing:.12em;">APTAMS</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:7px; padding:6px 11px; border-radius:999px; border:1px solid #262A22;">
+              <span style="height:6px; width:6px; border-radius:50%; background:#FF7A45; animation:pulseDot 2.4s ease-in-out infinite;"></span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#B9BFB4;">52 · Y4</span>
+            </div>
+          </div>
+
+          <div style="position:relative; padding:34px 22px 0;">
+            <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#C8FF3D; animation:rise .6s .1s ease-out both;">Coach</p>
+            <h2 style="margin:10px 0 0; font-family:'Archivo',sans-serif; font-size:34px; line-height:1.05; font-weight:700; letter-spacing:-.02em; animation:rise .6s .16s ease-out both;">Ask about your body, not your grade.</h2>
+            <p style="margin:12px 0 0; font-size:14px; line-height:1.6; color:#8C918A; animation:rise .6s .22s ease-out both;">Answers cite the sitting they came from.</p>
+
+            <div style="margin-top:24px; display:flex; flex-direction:column; gap:9px;">
+              <sc-for list="{{ mobilePrompts }}" as="p" hint-placeholder-count="4">
+                <div style="padding:14px 16px; border-radius:14px; border:1px solid #23261F; background:#0F110F; font-size:14px; color:#D6DBD1; display:flex; align-items:center; justify-content:space-between; animation:rise .6s ease-out both; animation-delay:{{ p.delay }};">
+                  {{ p.text }}<span style="color:#C8FF3D;">→</span>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="margin-top:22px; padding:18px; border-radius:16px; border:1px solid #1E211B; background:linear-gradient(180deg,#101210,#0B0D0B); animation:rise .6s .5s ease-out both;">
+              <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6F756C;">Highest leverage</p>
+              <p style="margin:8px 0 0; font-family:'Archivo',sans-serif; font-size:26px; font-weight:700; letter-spacing:-.02em;">Endurance run</p>
+              <p style="margin:4px 0 12px; font-size:13px; color:#8C918A;">293.0s → 247.0s worth +40 item pts</p>
+              <div style="height:7px; border-radius:999px; background:#15180F; overflow:hidden;">
+                <div style="height:100%; width:30%; border-radius:999px; background:#FF7A45; animation:barFill 1.1s .6s cubic-bezier(.2,.8,.2,1) both;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:14px 18px 30px; background:linear-gradient(180deg,transparent,#0B0C0B 32%);">
+            <div style="display:flex; align-items:center; gap:9px; padding:11px 12px 11px 18px; border-radius:16px; border:1px solid #2A2E25; background:#101210; margin-bottom:14px;">
+              <span style="flex:1; font-size:14px; color:#5C6158;">Ask your coach…</span>
+              <span style="height:32px; width:32px; border-radius:10px; background:#C8FF3D; color:#0A0B0A; display:flex; align-items:center; justify-content:center; font-size:13px;">▲</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:0 8px;">
+              <sc-for list="{{ dock }}" as="d" hint-placeholder-count="4">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:6px; width:66px;">
+                  <span style="font-size:17px; color:{{ d.color }};">{{ d.icon }}</span>
+                  <span style="font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:{{ d.color }};">{{ d.label }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1700,&quot;height&quot;:1000},&quot;defaultView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;coach&quot;,&quot;assess&quot;,&quot;plan&quot;,&quot;cohort&quot;],&quot;default&quot;:&quot;coach&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo state&quot;},&quot;typingMs&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:18,&quot;min&quot;:4,&quot;max&quot;:60,&quot;step&quot;:2,&quot;unit&quot;:&quot;ms&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;countUpMs&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1400,&quot;min&quot;:300,&quot;max&quot;:3000,&quot;step&quot;:100,&quot;unit&quot;:&quot;ms&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const LIME = "#C8FF3D";
+const WARN = "#FF7A45";
+const MID = "#E8C55A";
+const DIM = "#8C918A";
+
+const ITEMS = [
+  { label: "BMI", raw: "21.69 kg/m²", points: 100 },
+  { label: "Vital capacity", raw: "2 268 ml", points: 64 },
+  { label: "50 m sprint", raw: "10.6 s", points: 40 },
+  { label: "Standing long jump", raw: "158.3 cm", points: 64 },
+  { label: "Sit and reach", raw: "13.4 cm", points: 70 },
+  { label: "Endurance run", raw: "293.0 s", points: 30 },
+  { label: "Strength · sit-ups", raw: "9 reps", points: 0 },
+];
+
+const PROMPTS = [
+  "Why did my score drop this year?",
+  "What's my fastest path to 80?",
+  "Show me my weakest item",
+  "Build me a 4-week plan",
+  "Am I on track to pass?",
+  "How do I improve my endurance run?",
+  "Explain my radar profile",
+];
+
+const ANSWERS = {
+  "Why did my score drop this year?": {
+    text: "Your total fell from 59.8 to 52.0 between year 3 and year 4, and almost all of it is one item: the endurance run went from 70 points to 30. Everything else moved less than five points. Strength has scored zero in two of your four sittings, so it is holding the floor down rather than causing the drop.",
+    sources: [{ mark: "✓", id: "history:g3" }, { mark: "✓", id: "history:g4" }, { mark: "✓", id: "score:endurance_run" }],
+    card: {
+      label: "Year 3 → Year 4, by item", prov: "✓ verified", metric: "−7.8", unit: "total points",
+      note: "Endurance accounts for −40 item points on its own.",
+      rows: [
+        { label: "Endurance run", value: "70 → 30", pct: "100%", color: WARN },
+        { label: "Vital capacity", value: "60 → 64", pct: "10%", color: LIME },
+        { label: "50 m sprint", value: "40 → 40", pct: "2%", color: DIM },
+        { label: "Strength", value: "0 → 0", pct: "2%", color: DIM },
+      ],
+    },
+  },
+  "What's my fastest path to 80?": {
+    text: "Fastest by marginal efficiency, not by effort: the endurance run and the 50 m sprint carry the most points per unit of change for you. Taking endurance from 293 s to 247 s and the sprint from 10.6 s to 10.3 s puts your total at 80.4 on the scoring table. That is arithmetic, not a promise — both moves are inside one cohort standard deviation, which is the ceiling the system will suggest without a teacher.",
+    sources: [{ mark: "✓", id: "score:total" }, { mark: "~", id: "route:balanced" }],
+    card: {
+      label: "Route · balanced", prov: "~ scoring-table arithmetic", metric: "80.4", unit: "projected total",
+      note: "Two items move; per-item pressure stays medium.",
+      rows: [
+        { label: "Endurance run", value: "+40 pts", pct: "100%", color: LIME },
+        { label: "50 m sprint", value: "+10 pts", pct: "25%", color: LIME },
+        { label: "Everything else", value: "unchanged", pct: "4%", color: DIM },
+      ],
+    },
+  },
+  "Show me my weakest item": {
+    text: "Strength — one minute of sit-ups. Nine reps scores zero points for a fourth-year woman under the 2014 standard, and it has scored zero in two of your four sittings. It is not your best lever though: the endurance run returns more points per unit of work, so most plans start there and pick strength up in the second block.",
+    sources: [{ mark: "✓", id: "score:strength" }, { mark: "✓", id: "history:g4" }],
+    card: {
+      label: "Item scores · year 4", prov: "✓ verified", metric: "0", unit: "points · strength",
+      note: "Sixteen reps would be the first scoring band.",
+      rows: [
+        { label: "Strength · sit-ups", value: "0", pct: "2%", color: WARN },
+        { label: "Endurance run", value: "30", pct: "30%", color: WARN },
+        { label: "50 m sprint", value: "40", pct: "40%", color: MID },
+        { label: "Vital capacity", value: "64", pct: "64%", color: MID },
+      ],
+    },
+  },
+  "Build me a 4-week plan": {
+    text: "Four weeks is one block, so it targets one quality: aerobic base for the endurance run, with two easy strength sessions so the sit-up count starts moving. Three runs a week — two easy 25-minute efforts and one interval session of 6×400 m — plus two twelve-minute core circuits. These templates are generic and still pending PE-department review, so treat them as a starting point rather than a prescription.",
+    sources: [{ mark: "◐", id: "training:template" }, { mark: "✓", id: "score:endurance_run" }],
+    card: {
+      label: "Block 1 · aerobic base", prov: "◐ pending review", metric: "4", unit: "weeks",
+      note: "Five sessions a week, none above 30 minutes.",
+      rows: [
+        { label: "Easy runs", value: "2×/wk", pct: "70%", color: LIME },
+        { label: "Intervals", value: "1×/wk", pct: "35%", color: LIME },
+        { label: "Core circuit", value: "2×/wk", pct: "50%", color: LIME },
+      ],
+    },
+  },
+  "Am I on track to pass?": {
+    text: "Not currently. Your year-4 total is 52 against a pass line of 60, and the risk model puts your chance of passing at 17% — a flag, not a forecast, projected from first-year features across three years. The gap is eight points, which one item can cover.",
+    sources: [{ mark: "~", id: "progress:flag" }, { mark: "✓", id: "score:total" }],
+    card: {
+      label: "Pass estimate", prov: "~ measured / predicted", metric: "17%", unit: "chance of passing",
+      note: "Eight points below the line. Needs support.",
+      rows: [
+        { label: "Your total", value: "52.0", pct: "52%", color: WARN },
+        { label: "Pass line", value: "60.0", pct: "60%", color: DIM },
+        { label: "Cohort mean", value: "60.3", pct: "60%", color: DIM },
+      ],
+    },
+  },
+  "How do I improve my endurance run?": {
+    text: "The run is limited by aerobic capacity, running economy and pacing discipline — for your profile the first two dominate. Volume before intensity: build to three easy runs a week for a fortnight before adding one interval session, and hold the interval pace you can repeat rather than the one you can survive once. General exercise science, not a diagnosis of you.",
+    sources: [{ mark: "◐", id: "factors:endurance_run" }, { mark: "✓", id: "score:endurance_run" }],
+    card: {
+      label: "Physical factors · endurance run", prov: "◐ general reference", metric: "293.0", unit: "seconds now",
+      note: "247.0 s is the next scoring band, worth +40 item points.",
+      rows: [
+        { label: "Aerobic capacity", value: "primary", pct: "100%", color: LIME },
+        { label: "Running economy", value: "primary", pct: "80%", color: LIME },
+        { label: "Pacing", value: "supporting", pct: "45%", color: DIM },
+      ],
+    },
+  },
+  "Explain my radar profile": {
+    text: "The radar plots points, not measurements — the standard has already normalised for sex and year group, so the seven axes are comparable to each other. Yours is lopsided: BMI at 100 and sit-and-reach at 70 hold up one side, endurance at 30 and strength at 0 collapse the other. A lopsided shape is good news for planning, because the low axes are where points are cheapest.",
+    sources: [{ mark: "✓", id: "score:total" }, { mark: "✓", id: "type:segment" }],
+    card: {
+      label: "Profile · broad headroom", prov: "✓ verified", metric: "52.0", unit: "weighted total",
+      note: "Cluster: room to grow across most items.",
+      rows: [
+        { label: "Strongest · BMI", value: "100", pct: "100%", color: LIME },
+        { label: "Median · sit-and-reach", value: "70", pct: "70%", color: MID },
+        { label: "Weakest · strength", value: "0", pct: "2%", color: WARN },
+      ],
+    },
+  },
+};
+
+class Component extends DCLogic {
+  state = { view: this.props.defaultView ?? "coach", messages: [], draft: "", mic: false, scoreShown: 0, streaming: false };
+
+  componentDidMount() { this.countUp(); }
+
+  countUp() {
+    const target = 52;
+    const dur = this.props.countUpMs ?? 1400;
+    const start = performance.now();
+    const step = (t) => {
+      const k = Math.min(1, (t - start) / dur);
+      const eased = 1 - Math.pow(1 - k, 3);
+      this.setState({ scoreShown: Math.round(target * eased) });
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  go(view) {
+    this.setState({ view });
+    if (view === "assess") { this.setState({ scoreShown: 0 }); requestAnimationFrame(() => this.countUp()); }
+  }
+
+  ask(text) {
+    const a = ANSWERS[text] || ANSWERS["Am I on track to pass?"];
+    const msgs = this.state.messages.concat([
+      { isUser: true, text },
+      { isUser: false, text: "", full: a.text, sources: a.sources, card: a.card, typing: true },
+    ]);
+    this.setState({ messages: msgs, draft: "", streaming: true });
+    const idx = msgs.length - 1;
+    let i = 0;
+    const tick = () => {
+      i += 3;
+      const cur = this.state.messages.slice();
+      if (!cur[idx]) return;
+      cur[idx] = Object.assign({}, cur[idx], { text: a.text.slice(0, i), typing: i < a.text.length });
+      this.setState({ messages: cur, streaming: i < a.text.length });
+      if (i < a.text.length) setTimeout(tick, this.props.typingMs ?? 18);
+    };
+    setTimeout(tick, 380);
+  }
+
+  ring() {
+    const e = React.createElement, r = 120, C = 2 * Math.PI * r;
+    const pct = 0.52, gate = 0.60;
+    const ga = (gate * 360) - 90;
+    const gx = 150 + (r) * Math.cos(ga * Math.PI / 180), gy = 150 + r * Math.sin(ga * Math.PI / 180);
+    return e("svg", { viewBox: "0 0 300 300", style: { width: "100%", height: "100%" } }, [
+      e("circle", { key: "t", cx: 150, cy: 150, r, fill: "none", stroke: "#191C16", strokeWidth: 14 }),
+      e("circle", {
+        key: "v", cx: 150, cy: 150, r, fill: "none", stroke: WARN, strokeWidth: 14, strokeLinecap: "round",
+        strokeDasharray: C, strokeDashoffset: C * (1 - pct), transform: "rotate(-90 150 150)",
+        style: { animation: "ringDraw 1.5s cubic-bezier(.2,.8,.2,1) both" },
+      }),
+      e("circle", { key: "g", cx: gx.toFixed(1), cy: gy.toFixed(1), r: 5, fill: "#0B0C0B", stroke: LIME, strokeWidth: 2.5 }),
+    ]);
+  }
+
+  radar() {
+    const e = React.createElement, N = 7, cx = 140, cy = 118, R = 84;
+    const pts = ITEMS.map((it) => it.points);
+    const ang = (i) => -Math.PI / 2 + (i / N) * Math.PI * 2;
+    const pt = (i, rr) => [cx + rr * Math.cos(ang(i)), cy + rr * Math.sin(ang(i))];
+    const poly = (f) => ITEMS.map((it, i) => { const [x, y] = pt(i, R * f(it, i)); return x.toFixed(1) + "," + y.toFixed(1); }).join(" ");
+    const kids = [];
+    [0.25, 0.5, 0.75, 1].forEach((k, j) => kids.push(e("polygon", { key: "r" + j, points: poly(() => k), fill: "none", stroke: j === 2 ? "rgba(200,255,61,.22)" : "#1D2018", strokeWidth: 1 })));
+    ITEMS.forEach((_, i) => { const [x, y] = pt(i, R); kids.push(e("line", { key: "a" + i, x1: cx, y1: cy, x2: x.toFixed(1), y2: y.toFixed(1), stroke: "#1D2018", strokeWidth: 1 })); });
+    kids.push(e("polygon", { key: "fill", points: poly((it) => it.points / 100), fill: "rgba(200,255,61,.13)", stroke: "none", style: { animation: "fade 1.2s .5s ease-out both" } }));
+    kids.push(e("polygon", {
+      key: "line", points: poly((it) => it.points / 100), fill: "none", stroke: LIME, strokeWidth: 2, strokeLinejoin: "round",
+      strokeDasharray: 900, style: { animation: "pathDraw 1.8s cubic-bezier(.3,.7,.3,1) both" },
+    }));
+    ITEMS.forEach((it, i) => { const [x, y] = pt(i, R * (it.points / 100)); kids.push(e("circle", { key: "d" + i, cx: x.toFixed(1), cy: y.toFixed(1), r: 3.2, fill: it.points < 40 ? WARN : LIME, style: { animation: "popIn .4s both", animationDelay: (0.9 + i * 0.07) + "s" } })); });
+    const short = ["BMI", "LUNG", "50M", "JUMP", "REACH", "RUN", "STR"];
+    ITEMS.forEach((_, i) => {
+      const a = ang(i), [x, y] = pt(i, R + 20), c = Math.cos(a);
+      kids.push(e("text", { key: "t" + i, x: x.toFixed(1), y: y.toFixed(1), textAnchor: Math.abs(c) < 0.3 ? "middle" : c > 0 ? "start" : "end", dominantBaseline: "middle", fill: "#6F756C", style: { fontSize: 9.5, letterSpacing: "0.1em", fontFamily: "'JetBrains Mono',monospace" } }, short[i]));
+    });
+    return e("svg", { viewBox: "0 0 280 240", style: { width: "100%", height: "auto", overflow: "visible", marginTop: "6px" } }, kids);
+  }
+
+  trend() {
+    const e = React.createElement, vals = [49.8, 68.9, 59.8, 52.0], gate = 60;
+    const W = 300, H = 168, pl = 8, pr = 8, pt_ = 26, pb = 26;
+    const lo = 44, hi = 74, span = hi - lo;
+    const x = (i) => pl + (i / 3) * (W - pl - pr);
+    const y = (v) => pt_ + (H - pt_ - pb) * (1 - (v - lo) / span);
+    const kids = [];
+    kids.push(e("line", { key: "gate", x1: pl, x2: W - pr, y1: y(gate), y2: y(gate), stroke: "rgba(200,255,61,.35)", strokeWidth: 1, strokeDasharray: "4 5" }));
+    kids.push(e("text", { key: "gt", x: W - pr, y: y(gate) - 6, textAnchor: "end", fill: LIME, style: { fontSize: 9, fontFamily: "'JetBrains Mono',monospace" } }, "PASS 60"));
+    kids.push(e("polyline", {
+      key: "l", points: vals.map((v, i) => x(i).toFixed(1) + "," + y(v).toFixed(1)).join(" "), fill: "none",
+      stroke: LIME, strokeWidth: 2, strokeLinejoin: "round", strokeLinecap: "round",
+      strokeDasharray: 900, style: { animation: "pathDraw 1.6s .2s cubic-bezier(.3,.7,.3,1) both" },
+    }));
+    vals.forEach((v, i) => {
+      const above = v >= gate;
+      kids.push(e("circle", { key: "p" + i, cx: x(i), cy: y(v), r: i === 3 ? 5 : 3.6, fill: above ? LIME : WARN, stroke: "#0B0D0B", strokeWidth: 2, style: { animation: "popIn .4s both", animationDelay: (0.5 + i * 0.22) + "s" } }));
+      kids.push(e("text", { key: "v" + i, x: x(i), y: y(v) - 12, textAnchor: "middle", fill: above ? LIME : WARN, style: { fontSize: 11, fontFamily: "'Archivo',sans-serif", fontWeight: 700 } }, String(v)));
+      kids.push(e("text", { key: "y" + i, x: x(i), y: H - 6, textAnchor: "middle", fill: i === 3 ? "#E6EAE1" : "#5C6158", style: { fontSize: 9.5, letterSpacing: "0.12em", fontFamily: "'JetBrains Mono',monospace" } }, "Y" + (i + 1)));
+    });
+    return e("svg", { viewBox: "0 0 300 168", style: { width: "100%", height: "auto", marginTop: "8px" } }, kids);
+  }
+
+  renderVals() {
+    const v = this.state.view;
+    const navDef = [
+      { id: "coach", label: "Coach" }, { id: "assess", label: "Assessment" },
+      { id: "plan", label: "Plan" }, { id: "cohort", label: "Cohort" },
+    ];
+    return {
+      isCoach: v === "coach", isAssess: v === "assess", isPlan: v === "plan", isCohort: v === "cohort",
+      chatEmpty: this.state.messages.length === 0,
+      chatStarted: this.state.messages.length > 0,
+      scoreShown: this.state.scoreShown,
+      draft: this.state.draft,
+      onDraft: (e) => this.setState({ draft: e.target.value }),
+      onKey: (e) => { if (e.key === "Enter" && this.state.draft.trim()) this.ask(this.state.draft.trim()); },
+      sendDraft: () => { if (this.state.draft.trim()) this.ask(this.state.draft.trim()); },
+      toggleMic: () => this.setState({ mic: !this.state.mic }),
+      micBg: this.state.mic ? LIME : "transparent",
+      micColor: this.state.mic ? "#0A0B0A" : "#8C918A",
+      nav: navDef.map((n) => ({
+        label: n.label, go: () => this.go(n.id),
+        bg: v === n.id ? "rgba(200,255,61,.14)" : "transparent",
+        color: v === n.id ? LIME : "#8C918A",
+        dot: v === n.id ? LIME : "#2E332A",
+      })),
+      prompts: PROMPTS.map((p, i) => ({ text: p, send: () => this.ask(p), delay: (0.18 + i * 0.05).toFixed(2) + "s" })),
+      mobilePrompts: PROMPTS.slice(0, 4).map((p, i) => ({ text: p, delay: (0.28 + i * 0.06).toFixed(2) + "s" })),
+      dock: [
+        { icon: "◆", label: "Coach", color: LIME }, { icon: "◎", label: "Score", color: "#5C6158" },
+        { icon: "▲", label: "Plan", color: "#5C6158" }, { icon: "≡", label: "More", color: "#5C6158" },
+      ],
+      glance: [
+        { label: "Year 4 total", value: "52.0", note: "8 points below the pass line", color: WARN },
+        { label: "Chance of passing", value: "17%", note: "risk flag, not a forecast", color: WARN },
+        { label: "Cheapest points", value: "+40", note: "endurance run, one band", color: LIME },
+      ],
+      messages: this.state.messages.map((m) => ({
+        isUser: !!m.isUser, isBot: !m.isUser, align: m.isUser ? "flex-end" : "flex-start",
+        text: m.isUser ? m.text : m.text,
+        caret: m.typing ? "inline" : "none",
+        hasSources: !m.isUser && !m.typing, sources: m.sources || [],
+        hasCard: !m.isUser && !m.typing && !!m.card,
+        card: m.card ? Object.assign({}, m.card, {
+          rows: m.card.rows.map((r, i) => Object.assign({}, r, { delay: (0.15 + i * 0.1).toFixed(2) + "s" })),
+        }) : null,
+      })),
+      items: ITEMS.map((it, i) => ({
+        n: String(i + 1).padStart(2, "0"), label: it.label, raw: it.raw, points: it.points,
+        pct: Math.max(2, it.points) + "%",
+        color: it.points >= 80 ? LIME : it.points >= 60 ? MID : WARN,
+        delay: (0.2 + i * 0.07).toFixed(2) + "s",
+      })),
+      gates: [
+        { label: "to pass · 60", gap: "+8.0", color: WARN },
+        { label: "to good · 80", gap: "+28.0", color: MID },
+        { label: "since year 1", gap: "+2.2", color: LIME },
+      ],
+      ringSvg: this.ring(), radarSvg: this.radar(), trendSvg: this.trend(),
+      ladder: [
+        { score: "52", tag: "now", color: WARN, hasArrow: true, delay: "0s" },
+        { score: "62", tag: "stage 1", color: MID, hasArrow: true, delay: ".8s" },
+        { score: "71", tag: "stage 2", color: MID, hasArrow: true, delay: "1.6s" },
+        { score: "80", tag: "target", color: LIME, hasArrow: false, delay: "0s" },
+      ],
+      stagePlans: [
+        { tag: "Stage 1 · active", state: "in progress", tagColor: LIME, title: "Aerobic base", body: "One item, one block. Endurance from 293 s to 266 s is a single scoring band and covers the pass line on its own.", border: "rgba(200,255,61,.35)", bg: "linear-gradient(180deg,rgba(200,255,61,.07),#0C0E0C)", delay: ".16s",
+          moves: [{ label: "Endurance run", delta: "+20 pts" }, { label: "Vital capacity", delta: "+6 pts" }] },
+        { tag: "Stage 2", state: "locked", tagColor: "#8C918A", title: "Speed & spring", body: "Sprint and jump share the load once the aerobic base holds. Neither move exceeds one cohort standard deviation.", border: "#1E211B", bg: "#0C0E0C", delay: ".24s",
+          moves: [{ label: "50 m sprint", delta: "+10 pts" }, { label: "Standing long jump", delta: "+8 pts" }] },
+        { tag: "Stage 3", state: "locked", tagColor: "#8C918A", title: "Strength floor", body: "Sit-ups have scored zero twice. Sixteen reps is the first band, and it is the last eight points to 80.", border: "#1E211B", bg: "#0C0E0C", delay: ".32s",
+          moves: [{ label: "Strength · sit-ups", delta: "+10 pts" }, { label: "Endurance run", delta: "+10 pts" }] },
+      ],
+      bandBars: [
+        { label: "Excellent", n: 0, h: "3%", color: "#2E332A", delay: ".1s" },
+        { label: "Good", n: 10, h: "12%", color: MID, delay: ".18s" },
+        { label: "Pass", n: 119, h: "100%", color: LIME, delay: ".26s" },
+        { label: "Fail", n: 111, h: "93%", color: WARN, delay: ".34s" },
+      ],
+      shap: [
+        { label: "Standing long jump", val: "27%", pct: "100%", color: LIME, delay: ".1s" },
+        { label: "Endurance run", val: "24%", pct: "90%", color: LIME, delay: ".18s" },
+        { label: "Sit and reach", val: "12%", pct: "45%", color: MID, delay: ".26s" },
+        { label: "Strength", val: "11%", pct: "42%", color: MID, delay: ".34s" },
+        { label: "50 m sprint", val: "8%", pct: "31%", color: "#5C6158", delay: ".42s" },
+        { label: "Vital capacity", val: "6%", pct: "23%", color: "#5C6158", delay: ".5s" },
+      ],
+      clusters: [
+        { n: "90", label: "Endurance headroom", note: "44% below the gate. Mean 60.0.", pct: "100%", delay: ".1s" },
+        { n: "52", label: "Broad headroom", note: "69% below the gate. Mean 54.1.", pct: "58%", delay: ".18s" },
+        { n: "51", label: "Lung capacity headroom", note: "10% below the gate. Mean 71.1.", pct: "57%", delay: ".26s" },
+        { n: "47", label: "Explosive power headroom", note: "64% below the gate. Mean 56.0.", pct: "52%", delay: ".34s" },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

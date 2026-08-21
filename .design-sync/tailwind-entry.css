@@ -1,0 +1,6 @@
+/* design-sync CSS entry.
+   Compiles the app's Tailwind v4 source (src/app/globals.css) into the plain
+   stylesheet the DS bundle ships. @source is explicit because this file lives
+   outside src/ and the repo has no git root for Tailwind's auto-detection. */
+@import "../src/app/globals.css";
+@source "../src";

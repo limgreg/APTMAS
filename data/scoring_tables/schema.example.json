@@ -1,0 +1,36 @@
+{
+  "$comment": "ILLUSTRATIVE SKELETON ONLY. Every value below is a placeholder shape, NOT a real scoring value. Do not treat any number here as data. Replace with the mentor-supplied 《国家学生体质健康标准（2014年修订）》 tables for the confirmed grade band. See README.md.",
+  "standard": "GB national student physical health standard, 2014 revision",
+  "grade_band": "<primary|junior|senior|university — BLOCKING: confirm target band>",
+  "items": [
+    {
+      "id": "<item_id, e.g. sit_and_reach>",
+      "label_zh": "<中文名>",
+      "label_en": "<english name>",
+      "unit": "<cm|s|ml|count|...>",
+      "direction": "<higher_is_better|lower_is_better>",
+      "weight_by_band": { "<band>": "<weight — from the standard, not invented>" },
+      "score_table": {
+        "$comment": "Per sex, per age (or grade-year), the mapping from raw value to item score. Structure to be finalized when real tables are in hand (piecewise thresholds vs. continuous formula).",
+        "male": { "<age>": [{ "raw_min": null, "raw_max": null, "score": null }] },
+        "female": { "<age>": [{ "raw_min": null, "raw_max": null, "score": null }] }
+      }
+    }
+  ],
+  "bonus_rules": [
+    {
+      "$comment": "附加分. Extra-credit items and caps, straight from the standard.",
+      "item_id": "<item_id>",
+      "applies_to": "<condition>",
+      "points": null,
+      "cap": null
+    }
+  ],
+  "grade_bands": {
+    "$comment": "Total-score → band cutoffs. From the standard.",
+    "优秀": { "total_min": null, "total_max": null },
+    "良好": { "total_min": null, "total_max": null },
+    "及格": { "total_min": null, "total_max": null },
+    "不及格": { "total_min": null, "total_max": null }
+  }
+}

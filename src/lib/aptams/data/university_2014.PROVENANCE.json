@@ -1,0 +1,10 @@
+{
+  "$note": "Provenance record for the scoring tables the app ships. The tables are the OUTPUT of analysis/extract_scoring_tables.py, which parses the official PDF and asserts structural invariants (20 score levels in order, weights summing to exactly 100, strictly monotonic thresholds, gap-free BMI categories) and aborts rather than emit a table it cannot verify. No threshold is ever entered by hand. scripts/check-data.mjs asserts the sha256 below on every build; a mismatch means the file was edited outside the extractor.",
+  "standard": "大学生国家体质健康测试评分标准",
+  "grade_band": "university",
+  "source_pdf": "2026316427993附件1.大学生国家体质健康测试评分标准(1).pdf",
+  "extracted_by": "analysis/extract_scoring_tables.py",
+  "sha256": "0d8b818f50045377ae88e24d9ffc74d040ec951fbb543735334eb858c7217239",
+  "recorded_on": "2026-08-19",
+  "regenerate": "python -m analysis.extract_scoring_tables"
+}

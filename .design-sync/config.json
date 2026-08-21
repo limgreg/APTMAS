@@ -1,0 +1,10 @@
+{
+  "shape": "package",
+  "pkg": "aptams-ds",
+  "globalName": "AptamsDS",
+  "srcDir": "src",
+  "tsconfig": "tsconfig.json",
+  "cssEntry": ".design-sync/.cache/ds.css",
+  "buildCmd": "node .ds-sync/node_modules/@tailwindcss/cli/dist/index.mjs -i .design-sync/tailwind-entry.css -o .design-sync/.cache/ds.css",
+  "guidelinesGlob": ["DESIGN.md", "docs/*.md", "docs/guides/**/*.md"]
+}

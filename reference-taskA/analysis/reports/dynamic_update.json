@@ -1,0 +1,204 @@
+{
+  "objective": "A3 — dynamic feature-update mechanism",
+  "procedure": [
+    "trigger: a new intake cohort or survey wave arrives",
+    "update: re-ingest, re-fit Progress Check, recompute SHAP importances",
+    "maintain: measure the noise floor with random probes, prune features that fail it on consecutive refits, promote ones that clear it, and version the result",
+    "refresh: regenerate the A2 rule base from the new fit"
+  ],
+  "rules": {
+    "n_probes": 3,
+    "promote_margin_over_noise_floor": 1.5,
+    "prune_after_consecutive_failures": 2
+  },
+  "waves": [
+    [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    [
+      2022
+    ],
+    [
+      2023
+    ]
+  ],
+  "versions": [
+    {
+      "version": 1,
+      "cohorts": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "n_rows": 10821,
+      "active_features": [
+        "enrollment_year",
+        "g1_score_bmi",
+        "g1_score_endurance_run",
+        "g1_score_sit_and_reach",
+        "g1_score_sprint_50m",
+        "g1_score_standing_long_jump",
+        "g1_score_strength",
+        "g1_score_vital_capacity",
+        "g1_total",
+        "is_male"
+      ],
+      "promoted": [],
+      "pruned": [],
+      "importance_share": {
+        "g1_total": 0.35124,
+        "g1_score_standing_long_jump": 0.14534,
+        "g1_score_endurance_run": 0.13229,
+        "enrollment_year": 0.08752,
+        "g1_score_sit_and_reach": 0.07906,
+        "g1_score_strength": 0.05812,
+        "g1_score_sprint_50m": 0.04943,
+        "g1_score_vital_capacity": 0.03731,
+        "__probe_0": 0.01559,
+        "__probe_1": 0.01308,
+        "g1_score_bmi": 0.01146,
+        "__probe_2": 0.01014,
+        "is_male": 0.0094
+      },
+      "metrics": {
+        "n_train": 8115.0,
+        "n_test": 2706.0,
+        "base_rate": 0.6091,
+        "auc_test": 0.8216,
+        "auc_train": 0.8363,
+        "accuracy_test": 0.7528,
+        "brier_test": 0.1654,
+        "log_loss_test": 0.5008,
+        "majority_baseline": 0.6091
+      },
+      "noise_floor": 0.01559,
+      "created_on": "2026-08-18"
+    },
+    {
+      "version": 2,
+      "cohorts": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "n_rows": 15674,
+      "active_features": [
+        "enrollment_year",
+        "g1_score_endurance_run",
+        "g1_score_sit_and_reach",
+        "g1_score_sprint_50m",
+        "g1_score_standing_long_jump",
+        "g1_score_strength",
+        "g1_score_vital_capacity",
+        "g1_total",
+        "is_male"
+      ],
+      "promoted": [],
+      "pruned": [
+        "g1_score_bmi"
+      ],
+      "importance_share": {
+        "g1_total": 0.3069,
+        "enrollment_year": 0.24575,
+        "g1_score_standing_long_jump": 0.10621,
+        "g1_score_endurance_run": 0.09472,
+        "g1_score_strength": 0.05147,
+        "g1_score_sit_and_reach": 0.04588,
+        "g1_score_sprint_50m": 0.03504,
+        "is_male": 0.03488,
+        "g1_score_vital_capacity": 0.0344,
+        "__probe_1": 0.01374,
+        "__probe_0": 0.01227,
+        "g1_score_bmi": 0.01025,
+        "__probe_2": 0.0085
+      },
+      "metrics": {
+        "n_train": 11755.0,
+        "n_test": 3919.0,
+        "base_rate": 0.6827,
+        "auc_test": 0.8396,
+        "auc_train": 0.8507,
+        "accuracy_test": 0.7882,
+        "brier_test": 0.1452,
+        "log_loss_test": 0.4481,
+        "majority_baseline": 0.6827
+      },
+      "noise_floor": 0.01374,
+      "created_on": "2026-08-18"
+    },
+    {
+      "version": 3,
+      "cohorts": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "n_rows": 20140,
+      "active_features": [
+        "enrollment_year",
+        "g1_score_endurance_run",
+        "g1_score_sit_and_reach",
+        "g1_score_sprint_50m",
+        "g1_score_standing_long_jump",
+        "g1_score_strength",
+        "g1_score_vital_capacity",
+        "g1_total",
+        "is_male"
+      ],
+      "promoted": [],
+      "pruned": [],
+      "importance_share": {
+        "enrollment_year": 0.32514,
+        "g1_total": 0.31227,
+        "g1_score_standing_long_jump": 0.07956,
+        "g1_score_endurance_run": 0.07123,
+        "g1_score_strength": 0.04356,
+        "g1_score_sit_and_reach": 0.04304,
+        "g1_score_sprint_50m": 0.03507,
+        "is_male": 0.02931,
+        "g1_score_vital_capacity": 0.02788,
+        "__probe_1": 0.01682,
+        "__probe_0": 0.01075,
+        "__probe_2": 0.00536
+      },
+      "metrics": {
+        "n_train": 15105.0,
+        "n_test": 5035.0,
+        "base_rate": 0.7374,
+        "auc_test": 0.8642,
+        "auc_train": 0.8722,
+        "accuracy_test": 0.8189,
+        "brier_test": 0.1249,
+        "log_loss_test": 0.3908,
+        "majority_baseline": 0.7374
+      },
+      "noise_floor": 0.01682,
+      "created_on": "2026-08-18"
+    }
+  ],
+  "noise_floor_by_version": {
+    "v1": 0.01559,
+    "v2": 0.01374,
+    "v3": 0.01682
+  },
+  "mechanism_self_test": {
+    "description": "Random probes are injected into every refit. They set the noise floor, and their own fate checks the logic: real features that fail the floor must be pruned, which is what makes this a demonstration rather than an assertion.",
+    "real_features_pruned": [
+      "g1_score_bmi"
+    ],
+    "passed": true
+  }
+}

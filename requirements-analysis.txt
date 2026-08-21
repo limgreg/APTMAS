@@ -1,0 +1,31 @@
+# Task A analysis / ML dependencies.
+#
+# These power the BUILD-TIME precompute only
+# (scripts/precompute/build_reference_cohort.py -> src/lib/aptams/data/cohort.json).
+# The Next.js runtime (Task B) does NOT import Python; it only reads the
+# generated cohort.json. The ground-truth rule engine itself is ML-free.
+#
+# Install (from the repo root):
+#   python3 -m pip install -r requirements-analysis.txt
+#   python3 scripts/precompute/build_reference_cohort.py
+#
+# Versions below are the exact set verified to reproduce cohort.json
+# (GBM AUC 0.866 / accuracy 0.821, treeSHAP drivers, 240 students) on
+# Python 3.12. They mirror reference-taskA/pyproject.toml [analysis] extra.
+
+numpy==2.5.2
+pandas==2.3.3
+scipy==1.18.0
+scikit-learn==1.9.0
+shap==0.52.0
+lime==0.2.0.1
+matplotlib==3.11.1
+pyarrow==25.0.1
+
+# Optional: only needed if you re-run the PDF/Office data extractors in
+# reference-taskA/analysis (the committed scoring tables + panel CSV already
+# exist, so the cohort build does not require them).
+# pdfplumber>=0.11
+# openpyxl>=3.1
+# python-docx>=1.1
+# tabulate>=0.9

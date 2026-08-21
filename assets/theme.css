@@ -1,0 +1,73 @@
+/* APTAMS redesign — drop-in replacement for the :root / .dark blocks in
+   src/app/globals.css. Tailwind v4 + shadcn variable names kept intact, so every
+   existing bg-card / text-muted-foreground / border-border utility keeps working;
+   only the values change. Dark-only: :root and .dark are deliberately identical. */
+
+@theme inline {
+  --font-sans: 'Barlow', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Archivo', var(--font-sans);
+  --font-condensed: 'Barlow Condensed', var(--font-sans);
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root, .dark {
+  --radius: 1rem;
+
+  --background: #080908;
+  --foreground: #F2F4EF;
+
+  --card: #101210;
+  --card-foreground: #F2F4EF;
+  --popover: #101210;
+  --popover-foreground: #F2F4EF;
+
+  /* lime is the single accent: score, CTAs, active nav, "good" data */
+  --primary: #C8FF3D;
+  --primary-foreground: #0A0B0A;
+
+  --secondary: #0E100E;
+  --secondary-foreground: #E6EAE1;
+
+  --muted: #15180F;
+  --muted-foreground: #8C918A;
+
+  --accent: rgba(200, 255, 61, 0.14);
+  --accent-foreground: #C8FF3D;
+
+  /* warn doubles as destructive: below-pass, failing items, risk flags */
+  --destructive: #FF7A45;
+  --destructive-foreground: #0A0B0A;
+
+  --border: #1E211B;
+  --input: #2A2E25;
+  --ring: #C8FF3D;
+
+  --chart-1: #C8FF3D;
+  --chart-2: #FF7A45;
+  --chart-3: #E8C55A;
+  --chart-4: #5C6158;
+  --chart-5: #2E332A;
+
+  --sidebar: #0B0C0B;
+  --sidebar-foreground: #F2F4EF;
+  --sidebar-primary: #C8FF3D;
+  --sidebar-primary-foreground: #0A0B0A;
+  --sidebar-accent: rgba(200, 255, 61, 0.14);
+  --sidebar-accent-foreground: #C8FF3D;
+  --sidebar-border: #1E211B;
+  --sidebar-ring: #C8FF3D;
+
+  /* extra tokens the redesign needs that shadcn has no slot for */
+  --surface-0: #0B0C0B;
+  --surface-2: #0E100E;
+  --surface-3: #15180F;
+  --panel-grad: linear-gradient(180deg, #101210, #0B0D0B);
+  --border-strong: #2A2E25;
+  --hairline: #171A15;
+  --muted-2: #6F756C;
+  --muted-3: #5C6158;
+  --muted-4: #4E5449;
+  --mid: #E8C55A;
+  --warn-soft: #FF9E75;
+  --warn-wash: rgba(255, 122, 69, 0.14);
+}

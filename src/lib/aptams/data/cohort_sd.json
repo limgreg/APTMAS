@@ -1,0 +1,86 @@
+{
+ "$note": "Per (sex, grade) standard deviation of each item, measured on the SZU PFT panel. AGGREGATE ONLY - no individual record is derivable from these. Used as the unit that analysis/route_to_pass and the planner measure effort in (SAFETY_CAP_SD cohort SD). Regenerate: python -m analysis.route_to_pass",
+ "units": {
+  "bmi": "kg/m2",
+  "vital_capacity": "ml",
+  "sprint_50m": "s",
+  "standing_long_jump": "cm",
+  "sit_and_reach": "cm",
+  "endurance_run": "s",
+  "strength": "count"
+ },
+ "sd": {
+  "female|g1": {
+   "bmi": 2.598388707949592,
+   "vital_capacity": 592.2145074175371,
+   "sprint_50m": 0.7169095421048355,
+   "standing_long_jump": 18.354229503685012,
+   "sit_and_reach": 6.58950999672931,
+   "endurance_run": 35.52167592806987,
+   "strength": 8.642960733741308
+  },
+  "female|g2": {
+   "bmi": 2.6290948451851284,
+   "vital_capacity": 620.783233632125,
+   "sprint_50m": 0.7466698002894362,
+   "standing_long_jump": 18.14710379151673,
+   "sit_and_reach": 6.567592891695479,
+   "endurance_run": 51.23384575366651,
+   "strength": 8.22467061416782
+  },
+  "female|g3": {
+   "bmi": 2.715199169411001,
+   "vital_capacity": 670.9458302527177,
+   "sprint_50m": 0.8277495787946557,
+   "standing_long_jump": 19.194339008499753,
+   "sit_and_reach": 6.774156080386675,
+   "endurance_run": 66.037310627698,
+   "strength": 8.32247925380997
+  },
+  "female|g4": {
+   "bmi": 2.7874420304101433,
+   "vital_capacity": 687.4849876805955,
+   "sprint_50m": 0.8937843020864884,
+   "standing_long_jump": 19.69005232397006,
+   "sit_and_reach": 6.848356580410309,
+   "endurance_run": 72.79683580652404,
+   "strength": 8.407597468977192
+  },
+  "male|g1": {
+   "bmi": 3.151003171766789,
+   "vital_capacity": 831.5021337054004,
+   "sprint_50m": 0.6034525941605404,
+   "standing_long_jump": 23.44306328820109,
+   "sit_and_reach": 7.147934605812443,
+   "endurance_run": 35.36011140667752,
+   "strength": 5.29220236762685
+  },
+  "male|g2": {
+   "bmi": 3.2135947051764235,
+   "vital_capacity": 881.469799630438,
+   "sprint_50m": 0.6558068351787844,
+   "standing_long_jump": 24.40345883562881,
+   "sit_and_reach": 7.240677786645298,
+   "endurance_run": 45.860616440177886,
+   "strength": 5.358107862718648
+  },
+  "male|g3": {
+   "bmi": 3.303618641297923,
+   "vital_capacity": 933.5944645426147,
+   "sprint_50m": 0.7606889873936562,
+   "standing_long_jump": 25.845500681299594,
+   "sit_and_reach": 7.508213081430238,
+   "endurance_run": 54.78032142768614,
+   "strength": 5.549468574978511
+  },
+  "male|g4": {
+   "bmi": 3.3678504416856776,
+   "vital_capacity": 952.4770677422833,
+   "sprint_50m": 0.869629135107593,
+   "standing_long_jump": 26.806733251124427,
+   "sit_and_reach": 7.689843837583843,
+   "endurance_run": 61.32449424456241,
+   "strength": 5.499500309938377
+  }
+ }
+}

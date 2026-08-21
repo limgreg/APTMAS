@@ -1,0 +1,2384 @@
+{
+  "schema_version": "0.1",
+  "generated_by": "analysis/handoff.py",
+  "synthetic": true,
+  "note": "Synthetic students, scored through the real rule engine so the objects are internally consistent with the national standard. No real student record is used. Safe to commit and to share with Task B.",
+  "students": [
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0001",
+      "meta": {
+        "sex": "male",
+        "grade": "g1",
+        "cohort_year": 2021,
+        "as_of": "2021-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 19.7,
+            "unit": "kg/m2",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 4781.0,
+            "unit": "ml",
+            "points": 85.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 8.3,
+            "unit": "s",
+            "points": 68.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 196.3,
+            "unit": "cm",
+            "points": 30.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 21.2,
+            "unit": "cm",
+            "points": 85.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 232.4,
+            "unit": "s",
+            "points": 74.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 14.0,
+            "unit": "count",
+            "points": 76.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 75.3,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": false,
+        "risk": "watch",
+        "pass_probability": 0.7311,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 85.85054177004652,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 5,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 28.9,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0002",
+      "meta": {
+        "sex": "female",
+        "grade": "g2",
+        "cohort_year": 2021,
+        "as_of": "2022-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 21.4,
+            "unit": "kg/m2",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 2634.0,
+            "unit": "ml",
+            "points": 72.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 8.1,
+            "unit": "s",
+            "points": 80.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 141.6,
+            "unit": "cm",
+            "points": 40.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 17.6,
+            "unit": "cm",
+            "points": 76.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 256.5,
+            "unit": "s",
+            "points": 66.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 27.0,
+            "unit": "count",
+            "points": 60.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 72.6,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": false,
+        "risk": "watch",
+        "pass_probability": 0.6645,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 134.5759914657973,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 1,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 8.9,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "ok",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "limited",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0003",
+      "meta": {
+        "sex": "male",
+        "grade": "g3",
+        "cohort_year": 2020,
+        "as_of": "2022-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 20.4,
+            "unit": "kg/m2",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 5231.0,
+            "unit": "ml",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 8.9,
+            "unit": "s",
+            "points": 60.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 232.4,
+            "unit": "cm",
+            "points": 70.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 5.7,
+            "unit": "cm",
+            "points": 62.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 238.2,
+            "unit": "s",
+            "points": 72.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 2.0,
+            "unit": "count",
+            "points": 0.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 69.6,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": false,
+        "risk": "watch",
+        "pass_probability": 0.6127,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 74.19723754072393,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 0,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 15.6,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "low",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0004",
+      "meta": {
+        "sex": "female",
+        "grade": "g4",
+        "cohort_year": 2021,
+        "as_of": "2024-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 18.2,
+            "unit": "kg/m2",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 3636.0,
+            "unit": "ml",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 9.2,
+            "unit": "s",
+            "points": 70.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 205.0,
+            "unit": "cm",
+            "points": 95.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 11.8,
+            "unit": "cm",
+            "points": 68.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 222.6,
+            "unit": "s",
+            "points": 78.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 24.0,
+            "unit": "count",
+            "points": 40.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 79.9,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": false,
+        "risk": "watch",
+        "pass_probability": 0.7406,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 21.18609240593986,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 3,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 14.1,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "ok",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0005",
+      "meta": {
+        "sex": "male",
+        "grade": "g1",
+        "cohort_year": 2020,
+        "as_of": "2020-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 20.6,
+            "unit": "kg/m2",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 2601.0,
+            "unit": "ml",
+            "points": 20.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 7.1,
+            "unit": "s",
+            "points": 80.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 231.4,
+            "unit": "cm",
+            "points": 70.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": -1.6,
+            "unit": "cm",
+            "points": 0.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 274.5,
+            "unit": "s",
+            "points": 50.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 0.0,
+            "unit": "count",
+            "points": 0.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 51.0,
+        "bonus": 0.0,
+        "band": "不及格",
+        "band_is_derived": true,
+        "pass": false,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": false,
+        "options": [
+          {
+            "id": "r1",
+            "changes": [
+              {
+                "indicator_id": "vital_capacity",
+                "delta": 499.0,
+                "unit": "ml",
+                "from_points": 20.0,
+                "to_points": 60.0,
+                "effort_sd": 0.6001
+              },
+              {
+                "indicator_id": "sit_and_reach",
+                "delta": 2.3,
+                "unit": "cm",
+                "from_points": 0.0,
+                "to_points": 30.0,
+                "effort_sd": 0.3218
+              }
+            ],
+            "projected_total": 60.0,
+            "effort_estimate": "PLACEHOLDER — awaiting mentor expert rules",
+            "effort_is_placeholder": true,
+            "provenance": "route:r1"
+          },
+          {
+            "id": "r2",
+            "changes": [
+              {
+                "indicator_id": "vital_capacity",
+                "delta": 499.0,
+                "unit": "ml",
+                "from_points": 20.0,
+                "to_points": 60.0,
+                "effort_sd": 0.6001
+              },
+              {
+                "indicator_id": "endurance_run",
+                "delta": -17.5,
+                "unit": "s",
+                "from_points": 50.0,
+                "to_points": 66.0,
+                "effort_sd": 0.4949
+              }
+            ],
+            "projected_total": 60.2,
+            "effort_estimate": "PLACEHOLDER — awaiting mentor expert rules",
+            "effort_is_placeholder": true,
+            "provenance": "route:r2"
+          },
+          {
+            "id": "r3",
+            "changes": [
+              {
+                "indicator_id": "vital_capacity",
+                "delta": 499.0,
+                "unit": "ml",
+                "from_points": 20.0,
+                "to_points": 60.0,
+                "effort_sd": 0.6001
+              },
+              {
+                "indicator_id": "sprint_50m",
+                "delta": -0.3,
+                "unit": "s",
+                "from_points": 80.0,
+                "to_points": 95.0,
+                "effort_sd": 0.4971
+              }
+            ],
+            "projected_total": 60.0,
+            "effort_estimate": "PLACEHOLDER — awaiting mentor expert rules",
+            "effort_is_placeholder": true,
+            "provenance": "route:r3"
+          }
+        ],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": true,
+        "risk": "on_track",
+        "pass_probability": 0.9067,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 0.0,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 2,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 21.2,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "ok",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0006",
+      "meta": {
+        "sex": "female",
+        "grade": "g2",
+        "cohort_year": 2020,
+        "as_of": "2021-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 16.0,
+            "unit": "kg/m2",
+            "points": 80.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 3602.0,
+            "unit": "ml",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 9.5,
+            "unit": "s",
+            "points": 68.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 92.1,
+            "unit": "cm",
+            "points": 0.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 9.0,
+            "unit": "cm",
+            "points": 64.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 220.5,
+            "unit": "s",
+            "points": 80.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 27.0,
+            "unit": "count",
+            "points": 60.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 69.0,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": false,
+        "risk": "at_risk",
+        "pass_probability": 0.1327,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 144.36187726303547,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 5,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 28.7,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "ok",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "ok",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": [
+        "at_risk"
+      ]
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0007",
+      "meta": {
+        "sex": "male",
+        "grade": "g3",
+        "cohort_year": 2020,
+        "as_of": "2022-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 16.5,
+            "unit": "kg/m2",
+            "points": 80.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 3479.0,
+            "unit": "ml",
+            "points": 64.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 8.8,
+            "unit": "s",
+            "points": 62.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 232.5,
+            "unit": "cm",
+            "points": 70.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 14.8,
+            "unit": "cm",
+            "points": 74.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 304.0,
+            "unit": "s",
+            "points": 40.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 3.0,
+            "unit": "count",
+            "points": 0.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 56.4,
+        "bonus": 0.0,
+        "band": "不及格",
+        "band_is_derived": true,
+        "pass": false,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": false,
+        "options": [
+          {
+            "id": "r1",
+            "changes": [
+              {
+                "indicator_id": "endurance_run",
+                "delta": -34.0,
+                "unit": "s",
+                "from_points": 40.0,
+                "to_points": 60.0,
+                "effort_sd": 0.6207
+              }
+            ],
+            "projected_total": 60.4,
+            "effort_estimate": "PLACEHOLDER — awaiting mentor expert rules",
+            "effort_is_placeholder": true,
+            "provenance": "route:r1"
+          }
+        ],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": true,
+        "risk": "on_track",
+        "pass_probability": 0.99,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 25.98361905423934,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 4,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 12.0,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "ok",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "ok",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0008",
+      "meta": {
+        "sex": "female",
+        "grade": "g4",
+        "cohort_year": 2022,
+        "as_of": "2025-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 20.0,
+            "unit": "kg/m2",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 3041.0,
+            "unit": "ml",
+            "points": 78.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 8.5,
+            "unit": "s",
+            "points": 76.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 115.0,
+            "unit": "cm",
+            "points": 0.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 23.5,
+            "unit": "cm",
+            "points": 90.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 247.9,
+            "unit": "s",
+            "points": 68.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 42.0,
+            "unit": "count",
+            "points": 74.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 71.9,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": false,
+        "risk": "watch",
+        "pass_probability": 0.6921,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 188.76418156441355,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 1,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 20.7,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "ok",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "limited",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0009",
+      "meta": {
+        "sex": "male",
+        "grade": "g1",
+        "cohort_year": 2021,
+        "as_of": "2021-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 17.9,
+            "unit": "kg/m2",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 3258.0,
+            "unit": "ml",
+            "points": 62.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 8.5,
+            "unit": "s",
+            "points": 66.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 243.1,
+            "unit": "cm",
+            "points": 76.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 13.9,
+            "unit": "cm",
+            "points": 74.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 282.5,
+            "unit": "s",
+            "points": 50.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 8.0,
+            "unit": "count",
+            "points": 40.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 66.5,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": true,
+        "risk": "on_track",
+        "pass_probability": 0.8519,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 36.63313887752293,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 2,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 26.4,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "low",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0010",
+      "meta": {
+        "sex": "female",
+        "grade": "g2",
+        "cohort_year": 2021,
+        "as_of": "2022-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 16.8,
+            "unit": "kg/m2",
+            "points": 80.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 2386.0,
+            "unit": "ml",
+            "points": 66.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 9.2,
+            "unit": "s",
+            "points": 70.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 143.4,
+            "unit": "cm",
+            "points": 40.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 13.1,
+            "unit": "cm",
+            "points": 70.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 216.0,
+            "unit": "s",
+            "points": 85.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 32.0,
+            "unit": "count",
+            "points": 66.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 70.5,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": false,
+        "risk": "watch",
+        "pass_probability": 0.7448,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 106.58553587858293,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 2,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 23.8,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0011",
+      "meta": {
+        "sex": "male",
+        "grade": "g3",
+        "cohort_year": 2022,
+        "as_of": "2024-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 17.6,
+            "unit": "kg/m2",
+            "points": 80.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 4327.0,
+            "unit": "ml",
+            "points": 78.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 6.4,
+            "unit": "s",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 229.2,
+            "unit": "cm",
+            "points": 68.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 8.9,
+            "unit": "cm",
+            "points": 66.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 274.2,
+            "unit": "s",
+            "points": 50.0,
+            "bonus": 0.0,
+            "band": "不及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 15.0,
+            "unit": "count",
+            "points": 76.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 74.7,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": false,
+        "risk": "watch",
+        "pass_probability": 0.6351,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 20.162059569143338,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 2,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 2.4,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "low",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "schema_version": "0.1",
+      "student_id": "SYN0012",
+      "meta": {
+        "sex": "female",
+        "grade": "g4",
+        "cohort_year": 2021,
+        "as_of": "2024-11-01"
+      },
+      "score": {
+        "items": [
+          {
+            "indicator_id": "bmi",
+            "raw": 21.1,
+            "unit": "kg/m2",
+            "points": 100.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:bmi"
+          },
+          {
+            "indicator_id": "vital_capacity",
+            "raw": 2162.0,
+            "unit": "ml",
+            "points": 62.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:vital_capacity"
+          },
+          {
+            "indicator_id": "sprint_50m",
+            "raw": 8.4,
+            "unit": "s",
+            "points": 78.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:sprint_50m"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "raw": 183.5,
+            "unit": "cm",
+            "points": 80.0,
+            "bonus": 0.0,
+            "band": "良好",
+            "provenance": "score:standing_long_jump"
+          },
+          {
+            "indicator_id": "sit_and_reach",
+            "raw": 22.8,
+            "unit": "cm",
+            "points": 90.0,
+            "bonus": 0.0,
+            "band": "优秀",
+            "provenance": "score:sit_and_reach"
+          },
+          {
+            "indicator_id": "endurance_run",
+            "raw": 269.9,
+            "unit": "s",
+            "points": 60.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:endurance_run"
+          },
+          {
+            "indicator_id": "strength",
+            "raw": 28.0,
+            "unit": "count",
+            "points": 60.0,
+            "bonus": 0.0,
+            "band": "及格",
+            "provenance": "score:strength"
+          }
+        ],
+        "total": 74.9,
+        "bonus": 0.0,
+        "band": "及格",
+        "band_is_derived": true,
+        "pass": true,
+        "pass_threshold": 60.0,
+        "provenance": "score:total"
+      },
+      "route": {
+        "target": "pass",
+        "target_total": 60.0,
+        "already_met": true,
+        "options": [],
+        "needs_human": false,
+        "unreachable_reason": null,
+        "causal": false
+      },
+      "progress": {
+        "available": true,
+        "on_track": false,
+        "risk": "watch",
+        "pass_probability": 0.6467,
+        "uncertainty": "wide — projected from g1 features to an evaluation year up to three years later; a risk flag, not a forecast",
+        "drivers": [
+          {
+            "indicator_id": "endurance_run",
+            "direction": "higher_hurts",
+            "strength": 0.198,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:endurance_run"
+          },
+          {
+            "indicator_id": "standing_long_jump",
+            "direction": "higher_helps",
+            "strength": 0.202,
+            "method": "shap",
+            "actionable": true,
+            "provenance": "driver:standing_long_jump"
+          }
+        ],
+        "provenance": "progress:flag"
+      },
+      "type": {
+        "segment_id": "endurance_run_headroom",
+        "segment_label_zh": "耐力提升空间型",
+        "segment_label_en": "Endurance is the headroom",
+        "weaknesses": [
+          "endurance_run"
+        ],
+        "provenance": "type:segment"
+      },
+      "indicators": [
+        {
+          "indicator_id": "weekly_moderate_minutes",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 67.75062641123297,
+          "unit": "min/wk",
+          "teacher_visible": true,
+          "provenance": "ind:weekly_moderate_minutes",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "exercise_freq_per_week",
+          "dimension": "behaviour",
+          "layer": "reported",
+          "value": 1,
+          "unit": "sessions/wk",
+          "teacher_visible": true,
+          "provenance": "ind:exercise_freq_per_week",
+          "reference": {
+            "clause_id": "who:pa-adult-150",
+            "moderate_min_per_week": 150,
+            "moderate_max_per_week": 300,
+            "strengthening_sessions_per_week": 2,
+            "source": "WHO Guidelines on physical activity and sedentary behaviour (2020), adults 18-64"
+          }
+        },
+        {
+          "indicator_id": "body_fat_pct",
+          "dimension": "metabolism",
+          "layer": "measured",
+          "value": 20.7,
+          "unit": "%",
+          "teacher_visible": true,
+          "provenance": "ind:body_fat_pct"
+        },
+        {
+          "indicator_id": "mood",
+          "dimension": "psychology",
+          "layer": "reported",
+          "value": "low",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:mood"
+        },
+        {
+          "indicator_id": "facility_access",
+          "dimension": "environment",
+          "layer": "reported",
+          "value": "good",
+          "unit": null,
+          "teacher_visible": false,
+          "provenance": "ind:facility_access"
+        }
+      ],
+      "flags": []
+    }
+  ]
+}

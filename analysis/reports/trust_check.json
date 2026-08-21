@@ -1,0 +1,65 @@
+{
+  "model_r2_on_known_function": 0.9968,
+  "mean_weight_abs_error": 0.006,
+  "max_weight_abs_error": 0.0164,
+  "mean_attribution_correlation": 0.9977,
+  "min_attribution_correlation": 0.9958,
+  "per_item": [
+    {
+      "item": "sprint_50m",
+      "true_weight": 0.2,
+      "shap_implied_weight": 0.1836,
+      "weight_abs_error": 0.0164,
+      "attribution_correlation": 0.9967,
+      "mean_abs_shap": 1.8583
+    },
+    {
+      "item": "endurance_run",
+      "true_weight": 0.2,
+      "shap_implied_weight": 0.2101,
+      "weight_abs_error": 0.0101,
+      "attribution_correlation": 0.9979,
+      "mean_abs_shap": 4.7299
+    },
+    {
+      "item": "bmi",
+      "true_weight": 0.15,
+      "shap_implied_weight": 0.1421,
+      "weight_abs_error": 0.0079,
+      "attribution_correlation": 0.998,
+      "mean_abs_shap": 1.2124
+    },
+    {
+      "item": "vital_capacity",
+      "true_weight": 0.15,
+      "shap_implied_weight": 0.1464,
+      "weight_abs_error": 0.0036,
+      "attribution_correlation": 0.9987,
+      "mean_abs_shap": 2.2467
+    },
+    {
+      "item": "standing_long_jump",
+      "true_weight": 0.1,
+      "shap_implied_weight": 0.1037,
+      "weight_abs_error": 0.0037,
+      "attribution_correlation": 0.9958,
+      "mean_abs_shap": 2.1592
+    },
+    {
+      "item": "sit_and_reach",
+      "true_weight": 0.1,
+      "shap_implied_weight": 0.0996,
+      "weight_abs_error": 0.0004,
+      "attribution_correlation": 0.9982,
+      "mean_abs_shap": 1.2771
+    },
+    {
+      "item": "strength",
+      "true_weight": 0.1,
+      "shap_implied_weight": 0.0999,
+      "weight_abs_error": 0.0001,
+      "attribution_correlation": 0.9984,
+      "mean_abs_shap": 2.7632
+    }
+  ]
+}
